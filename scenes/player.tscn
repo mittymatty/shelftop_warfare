@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://bmfvsuo8g21cg" path="res://scenes/components/input_component.tscn" id="5_fjrip"]
 [ext_resource type="PackedScene" uid="uid://cy5ppw87jnmn8" path="res://scenes/components/gun_component.tscn" id="6_smehm"]
 [ext_resource type="PackedScene" uid="uid://vqjy0rat2u5d" path="res://scenes/components/gravity_component.tscn" id="6_tuyoq"]
-[ext_resource type="PackedScene" uid="uid://dqoeirelb61ah" path="res://scenes/projectiles/player_bullet.tscn" id="7_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://cjro72gvhep3e" path="res://scenes/components/health_component.tscn" id="7_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://brjdkg4eghgpa" path="res://scenes/components/animation_component.tscn" id="9_3v2ag"]
+[ext_resource type="PackedScene" uid="uid://buk0topn0a7gu" path="res://scenes/projectiles/player_rocket.tscn" id="10_jej6c"]
 [ext_resource type="PackedScene" uid="uid://ckbwe46oi0hce" path="res://scenes/reload_bar.tscn" id="12_3v2ag"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2wvv"]
@@ -148,7 +148,7 @@ speed = 120.0
 [node name="GravityComponent" parent="Components" unique_id=827299611 instance=ExtResource("6_tuyoq")]
 
 [node name="GunComponent" parent="Components" unique_id=769225365 node_paths=PackedStringArray("gun_visuals", "muzzle") instance=ExtResource("6_smehm")]
-bullet = ExtResource("7_d2wvv")
+bullet = ExtResource("10_jej6c")
 gun_visuals = NodePath("../../Visuals/Gun")
 muzzle = NodePath("../../Visuals/Gun/Muzzle")
 

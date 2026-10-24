@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://df5egp5etvi8h"]
+
+[ext_resource type="PackedScene" uid="uid://c0v6l6r5fiqtr" path="res://scenes/friendlies/army_man.tscn" id="1_s6y14"]
+[ext_resource type="PackedScene" uid="uid://buk0topn0a7gu" path="res://scenes/projectiles/player_rocket.tscn" id="2_cjptc"]
+[ext_resource type="Texture2D" uid="uid://fufdrh0wfohb" path="res://assets/rocket_launcher.png" id="3_cjptc"]
+
+[node name="RocketLauncherMan" unique_id=365000319 instance=ExtResource("1_s6y14")]
+
+[node name="GunComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="2" unique_id=769225365]
+bullet = ExtResource("2_cjptc")
+bullet_damage = 0.0
+bullet_speed = 0.0
+max_ammo = 1
+
+[node name="TrackerComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="4" unique_id=1220211303]
+start_tracking_distance = 80.0
+
+[node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="5" unique_id=1130167078]
+max_health = 80.0
+regen_per_second = 8.0
+
+[node name="Gun" parent="Visuals" parent_id_path=PackedInt32Array(1694800844) index="2" unique_id=510723242]
+texture = ExtResource("3_cjptc")
+
+[node name="Muzzle" parent="Visuals/Gun" index="0" unique_id=243604337]
+position = Vector2(7.5, -2.5)
+
+[editable path="Components/GunComponent"]
+[editable path="Components/HealthComponent"]

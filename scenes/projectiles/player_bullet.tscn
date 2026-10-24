@@ -7,7 +7,7 @@
 radius = 1.75
 height = 11.0
 
-[node name="Player_Bullet" type="Area2D" unique_id=2109893616]
+[node name="PlayerBullet" type="Area2D" unique_id=2109893616]
 collision_layer = 8
 collision_mask = 5
 script = ExtResource("1_6ppsv")

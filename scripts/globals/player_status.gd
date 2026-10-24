@@ -4,7 +4,7 @@ enum GAME_STATUS {WAVE,PEACE,OVER}
 var current_click_mode: CLICK_MODE = CLICK_MODE.PLACE
 var current_game_status: GAME_STATUS = GAME_STATUS.PEACE
 
-var blocks: int = 4
+var blocks: int = 4 # Starting value
 var stored_troops: Array[PackedScene] = []
 
 var current_wave: int = 0
@@ -21,4 +21,5 @@ var all_possible_troop_data: Array[TroopData] = [
 	preload("res://resources/rifle_trooper.tres"),
 	preload("res://resources/shotgun_trooper.tres"),
 	preload("res://resources/two_pistol_troopers.tres"),
+	preload("res://resources/rocket_trooper.tres"),
 ]

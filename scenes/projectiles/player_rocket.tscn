@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://buk0topn0a7gu"]
+
+[ext_resource type="Script" uid="uid://c6rhwwb8ycbst" path="res://scripts/player_rocket.gd" id="1_eo1wb"]
+[ext_resource type="Texture2D" uid="uid://cuc3uisyey1ea" path="res://assets/blocks/yellow x.png" id="1_xhsq7"]
+[ext_resource type="PackedScene" uid="uid://ch62m4udw7yca" path="res://scenes/projectiles/player_explosion.tscn" id="2_qiaje"]
+[ext_resource type="Texture2D" uid="uid://llcboxxeeyw" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_xxqir"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eo1wb"]
+radius = 1.75
+height = 11.0
+
+[node name="player_rocket" type="Area2D" unique_id=1192236253]
+collision_layer = 8
+collision_mask = 5
+script = ExtResource("1_eo1wb")
+speed_increase_per_sec = 500.0
+explosion = ExtResource("2_qiaje")
+explosion_damage_per_second = 130.0
+speed = -50
+
+[node name="Visuals" type="Sprite2D" parent="." unique_id=2024728025]
+rotation = 0.008984804
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_xhsq7")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=1117932292]
+wait_time = 8.0
+one_shot = true
+autostart = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1352839806]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_eo1wb")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1448501365]
+enabled = false
+color = Color(1, 0.5058824, 0, 1)
+energy = 3.0
+texture = ExtResource("3_xxqir")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="LifeTimer" to="." method="_on_life_timer_timeout"]
