@@ -33,7 +33,11 @@
 [ext_resource type="PackedScene" uid="uid://5gjf0dwo0q1n" path="res://scenes/waves/wave_17.tscn" id="18_iuwyb"]
 [ext_resource type="PackedScene" uid="uid://dcf2l4o3eptsv" path="res://scenes/waves/wave_18.tscn" id="19_yv0u1"]
 [ext_resource type="PackedScene" uid="uid://oacadfc7ti8o" path="res://scenes/waves/wave_19.tscn" id="20_wltlc"]
-[ext_resource type="PackedScene" uid="uid://et44b36uh3gj" path="res://scenes/waves/wave_20.tscn" id="21_styym"]
+[ext_resource type="PackedScene" uid="uid://bighmi5d8gugf" path="res://scenes/waves/wave_21.tscn" id="21_pnsqg"]
+[ext_resource type="PackedScene" uid="uid://d2hynigef8cds" path="res://scenes/waves/wave_22.tscn" id="22_3lri6"]
+[ext_resource type="PackedScene" uid="uid://xm83bh7su8au" path="res://scenes/waves/wave_23.tscn" id="23_7uc5s"]
+[ext_resource type="PackedScene" uid="uid://byidfd8mrxqcx" path="res://scenes/waves/wave_24.tscn" id="24_3eg4m"]
+[ext_resource type="PackedScene" uid="uid://cs0vad2jp4sqi" path="res://scenes/waves/wave_25.tscn" id="25_boshx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(2574, 48)
@@ -77,7 +81,7 @@ size = Vector2(60.5, 6)
 
 [node name="Bedroom" type="Node2D" unique_id=602288621]
 script = ExtResource("1_4wfg3")
-waves = Array[PackedScene]([ExtResource("13_k5fq4"), ExtResource("3_cixf6"), ExtResource("4_wlwc7"), ExtResource("5_0wemr"), ExtResource("6_u8wxw"), ExtResource("7_ls8op"), ExtResource("8_qw8ek"), ExtResource("9_08d0o"), ExtResource("10_tl7to"), ExtResource("11_15if8"), ExtResource("12_u3yip"), ExtResource("13_pnsqg"), ExtResource("14_3lri6"), ExtResource("15_7uc5s"), ExtResource("16_3eg4m"), ExtResource("17_boshx"), ExtResource("18_iuwyb"), ExtResource("19_yv0u1"), ExtResource("20_wltlc"), ExtResource("21_styym")])
+waves = Array[PackedScene]([ExtResource("13_k5fq4"), ExtResource("3_cixf6"), ExtResource("4_wlwc7"), ExtResource("5_0wemr"), ExtResource("6_u8wxw"), ExtResource("7_ls8op"), ExtResource("8_qw8ek"), ExtResource("9_08d0o"), ExtResource("10_tl7to"), ExtResource("11_15if8"), ExtResource("12_u3yip"), ExtResource("13_pnsqg"), ExtResource("14_3lri6"), ExtResource("15_7uc5s"), ExtResource("16_3eg4m"), ExtResource("17_boshx"), ExtResource("18_iuwyb"), ExtResource("19_yv0u1"), ExtResource("20_wltlc"), ExtResource("21_pnsqg"), ExtResource("21_pnsqg"), ExtResource("22_3lri6"), ExtResource("23_7uc5s"), ExtResource("24_3eg4m"), ExtResource("25_boshx")])
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1170981993]
 
