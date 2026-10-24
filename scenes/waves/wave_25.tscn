@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cs0vad2jp4sqi"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_0p1mq"]
+[ext_resource type="PackedScene" uid="uid://cxudomp38mtv7" path="res://scenes/enemies/monkey_barrel.tscn" id="2_305pd"]
+[ext_resource type="PackedScene" uid="uid://6g6u2vp8pp55" path="res://scenes/enemies/speedy_enemy.tscn" id="3_d3eem"]
+[ext_resource type="PackedScene" uid="uid://8t2fpodo36ne" path="res://scenes/enemies/monkey.tscn" id="4_e0hqp"]
+
+[node name="Wave25" type="Node2D" unique_id=518542000]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_0p1mq")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_305pd"), ExtResource("3_d3eem"), ExtResource("2_305pd"), ExtResource("4_e0hqp"), ExtResource("2_305pd"), ExtResource("2_305pd")])
+
+[node name="EnemySpawner2" parent="." unique_id=1407251641 instance=ExtResource("1_0p1mq")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_305pd"), ExtResource("3_d3eem"), ExtResource("2_305pd"), ExtResource("4_e0hqp"), ExtResource("2_305pd"), ExtResource("2_305pd")])
+
+[node name="EnemySpawner3" parent="." unique_id=1386503628 instance=ExtResource("1_0p1mq")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_305pd"), ExtResource("3_d3eem"), ExtResource("2_305pd"), ExtResource("4_e0hqp"), ExtResource("2_305pd"), ExtResource("2_305pd")])
+
+[node name="EnemySpawner4" parent="." unique_id=721978832 instance=ExtResource("1_0p1mq")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_305pd"), ExtResource("3_d3eem"), ExtResource("2_305pd"), ExtResource("4_e0hqp"), ExtResource("2_305pd"), ExtResource("2_305pd")])

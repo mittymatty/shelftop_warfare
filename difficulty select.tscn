@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://dc50dwshqshme" path="res://back_to_menu.gd" id="5_36kui"]
 [ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://resources/cardboard button.tres" id="5_aelbi"]
 [ext_resource type="Texture2D" uid="uid://bqxnmhy74ad34" path="res://assets/images (3).jpg" id="6_1lvlj"]
+[ext_resource type="Script" uid="uid://hme6rher1l6o" path="res://easy.gd" id="6_aelbi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2cu4s"]
 shader = ExtResource("1_s6yae")
@@ -90,6 +91,7 @@ theme_override_styles/disabled = ExtResource("5_aelbi")
 theme_override_styles/disabled_mirrored = ExtResource("5_aelbi")
 theme_override_styles/focus = ExtResource("5_aelbi")
 text = "easy"
+script = ExtResource("6_aelbi")
 
 [node name="Button3" type="Button" parent="." unique_id=734450243]
 layout_mode = 1
@@ -180,3 +182,4 @@ scale = Vector2(0.12892379, 0.1289238)
 texture = ExtResource("6_1lvlj")
 
 [connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
