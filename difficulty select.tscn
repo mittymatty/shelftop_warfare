@@ -1,0 +1,152 @@
+[gd_scene format=3 uid="uid://dol1pryljmtjc"]
+
+[ext_resource type="Shader" uid="uid://cv4hcn5kggcxk" path="res://scripts/menu.gdshader" id="1_s6yae"]
+[ext_resource type="Texture2D" uid="uid://bwf2cvuh5n1m2" path="res://assets/soldier backround.png" id="2_qc1o2"]
+[ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="3_2cu4s"]
+[ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://cardboard button.tres" id="4_36kui"]
+[ext_resource type="Script" uid="uid://uwargdxll2jn" path="res://back_to_menu.gd" id="5_36kui"]
+[ext_resource type="Texture2D" uid="uid://bqxnmhy74ad34" path="res://assets/images (3).jpg" id="6_1lvlj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2cu4s"]
+shader = ExtResource("1_s6yae")
+
+[node name="Control" type="Control" unique_id=2142196946]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=484481061]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_2cu4s")
+layout_mode = 0
+offset_left = -108.0
+offset_top = -295.0
+offset_right = 1252.0
+offset_bottom = 945.0
+texture = ExtResource("2_qc1o2")
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1837892299]
+layout_mode = 0
+offset_left = -209.0
+offset_top = -67.0
+offset_right = 1389.0
+offset_bottom = 708.0
+color = Color(0.051970907, 0.05197099, 0.051970936, 0.5764706)
+
+[node name="Button" type="Button" parent="." unique_id=156284418]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -87.0
+offset_right = 174.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "go back"
+script = ExtResource("5_36kui")
+
+[node name="Button2" type="Button" parent="." unique_id=808511696]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_right = 200.0
+offset_bottom = 160.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "easy"
+
+[node name="Button3" type="Button" parent="." unique_id=734450243]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 127.0
+offset_right = 200.0
+offset_bottom = 287.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "medium"
+
+[node name="Button4" type="Button" parent="." unique_id=619689784]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -200.0
+offset_top = 260.0
+offset_right = 200.0
+offset_bottom = 420.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "hard"
+
+[node name="Button5" type="Button" parent="." unique_id=274569626]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -536.0
+offset_top = 400.0
+offset_right = 548.0
+offset_bottom = 547.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "crapload of monkeys"
+
+[node name="Images(3)2" type="Sprite2D" parent="." unique_id=1469662671]
+position = Vector2(52.000122, 471)
+scale = Vector2(0.13247249, 0.13882054)
+texture = ExtResource("6_1lvlj")
+
+[node name="Images(3)" type="Sprite2D" parent="." unique_id=2102419006]
+position = Vector2(1083, 466.99997)
+scale = Vector2(0.12892379, 0.1289238)
+texture = ExtResource("6_1lvlj")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]

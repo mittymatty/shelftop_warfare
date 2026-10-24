@@ -6,6 +6,8 @@
 [ext_resource type="FontFile" uid="uid://dn1dl7h18dgue" path="res://assets/fonts/YOSIA-SCRIBBLE.ttf" id="4_g3eks"]
 [ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://cardboard button.tres" id="5_v86rl"]
 [ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="6_13sgg"]
+[ext_resource type="Script" uid="uid://8wcpkktjqsqo" path="res://scripts/ui/quit.gd" id="6_v86rl"]
+[ext_resource type="Script" uid="uid://cakh6m7741bb4" path="res://scripts/ui/start.gd" id="8_13sgg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1vivr"]
 shader = ExtResource("1_vjb58")
@@ -73,6 +75,7 @@ theme_override_styles/hover = ExtResource("5_v86rl")
 theme_override_styles/disabled = ExtResource("5_v86rl")
 theme_override_styles/focus = ExtResource("5_v86rl")
 text = "QUIT?"
+script = ExtResource("6_v86rl")
 
 [node name="Button2" type="Button" parent="." unique_id=1110373999]
 layout_mode = 1
@@ -99,3 +102,7 @@ theme_override_styles/hover = ExtResource("5_v86rl")
 theme_override_styles/disabled = ExtResource("5_v86rl")
 theme_override_styles/focus = ExtResource("5_v86rl")
 text = "START!"
+script = ExtResource("8_13sgg")
+
+[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]
