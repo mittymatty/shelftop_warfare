@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://c7y2tp1c8dkw"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_dpncr"]
+[ext_resource type="PackedScene" uid="uid://cxudomp38mtv7" path="res://scenes/enemies/monkey_barrel.tscn" id="2_ilggj"]
+
+[node name="Wave15" type="Node2D" unique_id=237816847]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_dpncr")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_ilggj"), ExtResource("2_ilggj"), ExtResource("2_ilggj")])
+
+[node name="EnemySpawner2" parent="." unique_id=1599962994 instance=ExtResource("1_dpncr")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_ilggj"), ExtResource("2_ilggj"), ExtResource("2_ilggj")])

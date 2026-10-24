@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://nottyis4a52g"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_jp8cx"]
+[ext_resource type="PackedScene" uid="uid://42xxk58b8nsf" path="res://scenes/enemies/shotgun_enemy.tscn" id="2_us1yp"]
+[ext_resource type="PackedScene" uid="uid://l67h7jwewftp" path="res://scenes/enemies/shooting_enemy.tscn" id="3_7foh1"]
+[ext_resource type="PackedScene" uid="uid://cwvbinbhvljq5" path="res://scenes/enemies/basic_enemy.tscn" id="4_jhaik"]
+
+[node name="Wave7" type="Node2D" unique_id=1609373533]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_jp8cx")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_us1yp"), ExtResource("3_7foh1"), ExtResource("4_jhaik")])
+
+[node name="EnemySpawner2" parent="." unique_id=1079754607 instance=ExtResource("1_jp8cx")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_us1yp"), ExtResource("3_7foh1"), ExtResource("4_jhaik")])

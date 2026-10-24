@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://7kq4iyppblrd"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_im2tp"]
+[ext_resource type="PackedScene" uid="uid://l67h7jwewftp" path="res://scenes/enemies/shooting_enemy.tscn" id="2_7knyo"]
+
+[node name="Wave3" type="Node2D" unique_id=308491133]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_im2tp")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_7knyo")])
+
+[node name="EnemySpawner2" parent="." unique_id=1625626024 instance=ExtResource("1_im2tp")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_7knyo")])

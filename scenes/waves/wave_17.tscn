@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://5gjf0dwo0q1n"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_7empv"]
+[ext_resource type="PackedScene" uid="uid://b3anqa6k5sx3w" path="res://scenes/enemies/dinosaur.tscn" id="2_a6o7n"]
+[ext_resource type="PackedScene" uid="uid://cwvbinbhvljq5" path="res://scenes/enemies/basic_enemy.tscn" id="3_snf0i"]
+
+[node name="Wave17" type="Node2D" unique_id=568263244]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_7empv")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_a6o7n"), ExtResource("2_a6o7n"), ExtResource("3_snf0i"), ExtResource("3_snf0i"), ExtResource("3_snf0i")])
+
+[node name="EnemySpawner2" parent="." unique_id=1042854258 instance=ExtResource("1_7empv")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_a6o7n"), ExtResource("2_a6o7n"), ExtResource("3_snf0i"), ExtResource("3_snf0i"), ExtResource("3_snf0i")])

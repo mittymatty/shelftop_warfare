@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://osstgwscc6jp"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_sptoq"]
+[ext_resource type="PackedScene" uid="uid://b3anqa6k5sx3w" path="res://scenes/enemies/dinosaur.tscn" id="2_fnofj"]
+
+[node name="Wave10" type="Node2D" unique_id=1936048816]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_sptoq")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_fnofj"), ExtResource("2_fnofj")])
+
+[node name="EnemySpawner2" parent="." unique_id=677934056 instance=ExtResource("1_sptoq")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_fnofj"), ExtResource("2_fnofj")])

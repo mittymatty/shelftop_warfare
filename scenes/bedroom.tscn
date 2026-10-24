@@ -7,15 +7,33 @@
 [ext_resource type="PackedScene" uid="uid://ouml5ppft5gh" path="res://scenes/waves/wave_2.tscn" id="3_cixf6"]
 [ext_resource type="Texture2D" uid="uid://bio2ck3bpsm53" path="res://assets/window.png" id="3_o412v"]
 [ext_resource type="Texture2D" uid="uid://qjdxpoawdt2m" path="res://assets/floor.png" id="4_6d2g4"]
+[ext_resource type="PackedScene" uid="uid://7kq4iyppblrd" path="res://scenes/waves/wave_3.tscn" id="4_wlwc7"]
+[ext_resource type="PackedScene" uid="uid://d3jayxb271srr" path="res://scenes/waves/wave_4.tscn" id="5_0wemr"]
 [ext_resource type="Texture2D" uid="uid://bpjg3utif8i0t" path="res://assets/bed.png" id="5_6d2g4"]
 [ext_resource type="Texture2D" uid="uid://dfcganbesy6m0" path="res://assets/Walls.png" id="6_885xx"]
+[ext_resource type="PackedScene" uid="uid://cvet2agom0sof" path="res://scenes/waves/wave_5.tscn" id="6_u8wxw"]
+[ext_resource type="PackedScene" uid="uid://drsulorc3gkrw" path="res://scenes/waves/wave_6.tscn" id="7_ls8op"]
+[ext_resource type="PackedScene" uid="uid://nottyis4a52g" path="res://scenes/waves/wave_7.tscn" id="8_qw8ek"]
 [ext_resource type="PackedScene" uid="uid://7slsrx602p7n" path="res://scenes/ui/game_ui.tscn" id="8_xunnl"]
+[ext_resource type="PackedScene" uid="uid://bvoraum423c70" path="res://scenes/waves/wave_8.tscn" id="9_08d0o"]
 [ext_resource type="Texture2D" uid="uid://cj58pippkivoh" path="res://assets/blocks/blue N.png" id="9_lv7wv"]
 [ext_resource type="Texture2D" uid="uid://c18tf3roqqinn" path="res://assets/blocks/red a.png" id="10_k5fq4"]
+[ext_resource type="PackedScene" uid="uid://bawa7gcdsv1n7" path="res://scenes/waves/wave_9.tscn" id="10_tl7to"]
 [ext_resource type="Texture2D" uid="uid://cuc3uisyey1ea" path="res://assets/blocks/yellow x.png" id="11_4wfg3"]
+[ext_resource type="PackedScene" uid="uid://osstgwscc6jp" path="res://scenes/waves/wave_10.tscn" id="11_15if8"]
 [ext_resource type="Texture2D" uid="uid://cbv8j5xwmuixe" path="res://assets/blocks/green 2.png" id="12_mk2nf"]
+[ext_resource type="PackedScene" uid="uid://ch8xl6ixii6x8" path="res://scenes/waves/wave_11.tscn" id="12_u3yip"]
 [ext_resource type="PackedScene" uid="uid://dhvylm8fkrtvk" path="res://scenes/waves/wave_1.tscn" id="13_k5fq4"]
+[ext_resource type="PackedScene" uid="uid://dybpg4lj4sejr" path="res://scenes/waves/wave_12.tscn" id="13_pnsqg"]
+[ext_resource type="PackedScene" uid="uid://c50ooshplakm4" path="res://scenes/waves/wave_13.tscn" id="14_3lri6"]
+[ext_resource type="PackedScene" uid="uid://x4ekij4ergv3" path="res://scenes/waves/wave_14.tscn" id="15_7uc5s"]
 [ext_resource type="PackedScene" uid="uid://baplnbkfvyk8s" path="res://scenes/dalla.tscn" id="15_mk2nf"]
+[ext_resource type="PackedScene" uid="uid://c7y2tp1c8dkw" path="res://scenes/waves/wave_15.tscn" id="16_3eg4m"]
+[ext_resource type="PackedScene" uid="uid://dodm5m5hex0nm" path="res://scenes/waves/wave_16.tscn" id="17_boshx"]
+[ext_resource type="PackedScene" uid="uid://5gjf0dwo0q1n" path="res://scenes/waves/wave_17.tscn" id="18_iuwyb"]
+[ext_resource type="PackedScene" uid="uid://dcf2l4o3eptsv" path="res://scenes/waves/wave_18.tscn" id="19_yv0u1"]
+[ext_resource type="PackedScene" uid="uid://oacadfc7ti8o" path="res://scenes/waves/wave_19.tscn" id="20_wltlc"]
+[ext_resource type="PackedScene" uid="uid://et44b36uh3gj" path="res://scenes/waves/wave_20.tscn" id="21_styym"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(2574, 48)
@@ -59,7 +77,7 @@ size = Vector2(60.5, 6)
 
 [node name="Bedroom" type="Node2D" unique_id=602288621]
 script = ExtResource("1_4wfg3")
-waves = Array[PackedScene]([ExtResource("13_k5fq4"), ExtResource("3_cixf6")])
+waves = Array[PackedScene]([ExtResource("13_k5fq4"), ExtResource("3_cixf6"), ExtResource("4_wlwc7"), ExtResource("5_0wemr"), ExtResource("6_u8wxw"), ExtResource("7_ls8op"), ExtResource("8_qw8ek"), ExtResource("9_08d0o"), ExtResource("10_tl7to"), ExtResource("11_15if8"), ExtResource("12_u3yip"), ExtResource("13_pnsqg"), ExtResource("14_3lri6"), ExtResource("15_7uc5s"), ExtResource("16_3eg4m"), ExtResource("17_boshx"), ExtResource("18_iuwyb"), ExtResource("19_yv0u1"), ExtResource("20_wltlc"), ExtResource("21_styym")])
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1170981993]
 
@@ -223,4 +241,4 @@ shape = SubResource("RectangleShape2D_v5gy4")
 one_way_collision = true
 
 [node name="YellowTint" type="CanvasModulate" parent="." unique_id=1209719788]
-color = Color(0.93110514, 0.8208405, 0.6092211, 1)
+color = Color(0.93909043, 0.83996385, 0.6496892, 1)

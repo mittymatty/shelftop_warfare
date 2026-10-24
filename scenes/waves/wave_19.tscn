@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://oacadfc7ti8o"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_aifcc"]
+[ext_resource type="PackedScene" uid="uid://cxudomp38mtv7" path="res://scenes/enemies/monkey_barrel.tscn" id="2_6p61a"]
+
+[node name="Wave19" type="Node2D" unique_id=1833475017]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_aifcc")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_6p61a"), ExtResource("2_6p61a"), ExtResource("2_6p61a"), ExtResource("2_6p61a")])
+
+[node name="EnemySpawner2" parent="." unique_id=1275230292 instance=ExtResource("1_aifcc")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_6p61a"), ExtResource("2_6p61a"), ExtResource("2_6p61a"), ExtResource("2_6p61a")])

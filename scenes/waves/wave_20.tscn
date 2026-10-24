@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://et44b36uh3gj"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_ar21b"]
+[ext_resource type="PackedScene" uid="uid://42xxk58b8nsf" path="res://scenes/enemies/shotgun_enemy.tscn" id="2_41bam"]
+[ext_resource type="PackedScene" uid="uid://l67h7jwewftp" path="res://scenes/enemies/shooting_enemy.tscn" id="3_x64nf"]
+[ext_resource type="PackedScene" uid="uid://cwvbinbhvljq5" path="res://scenes/enemies/basic_enemy.tscn" id="4_mrcrl"]
+
+[node name="Wave20" type="Node2D" unique_id=1590215736]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_ar21b")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_41bam"), ExtResource("2_41bam"), ExtResource("3_x64nf"), ExtResource("3_x64nf"), ExtResource("4_mrcrl"), ExtResource("4_mrcrl")])
+
+[node name="EnemySpawner2" parent="." unique_id=898510501 instance=ExtResource("1_ar21b")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_41bam"), ExtResource("2_41bam"), ExtResource("3_x64nf"), ExtResource("3_x64nf"), ExtResource("4_mrcrl"), ExtResource("4_mrcrl")])
