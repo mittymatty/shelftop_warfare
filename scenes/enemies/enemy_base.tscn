@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://c60kihk36ttm5"]
 
-[ext_resource type="Script" uid="uid://d2my4umrs3pxn" path="res://scripts/enemy_base.gd" id="1_xuskm"]
+[ext_resource type="Script" uid="uid://d2my4umrs3pxn" path="res://scripts/enemies/enemy_base.gd" id="1_xuskm"]
 [ext_resource type="PackedScene" uid="uid://cjro72gvhep3e" path="res://scenes/components/health_component.tscn" id="2_3ysdf"]
 [ext_resource type="PackedScene" uid="uid://cy1034rgijxmi" path="res://scenes/components/movement_component.tscn" id="3_esqeu"]
 [ext_resource type="PackedScene" uid="uid://ddnaujh8g10oe" path="res://scenes/components/tracker_component.tscn" id="4_yt5vg"]
@@ -10,7 +10,69 @@
 [ext_resource type="PackedScene" uid="uid://dolv0ui3en5r3" path="res://scenes/components/jump_detector_component.tscn" id="7_yt5vg"]
 [ext_resource type="PackedScene" uid="uid://brjdkg4eghgpa" path="res://scenes/components/animation_component.tscn" id="8_yt5vg"]
 
-[node name="EnemyBase" type="CharacterBody2D" unique_id=733239099 node_paths=PackedStringArray("movement_component", "gravity_component", "tracker_component", "health_component", "jump_component", "jump_detector_component", "animation_component") groups=["enemies"]]
+[sub_resource type="Animation" id="Animation_oansv"]
+length = 0.25
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_78o78"]
+resource_name = "wobble"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.25),
+"transitions": PackedFloat32Array(-2, -2),
+"update": 0,
+"values": [Vector2(0, -2), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.125, 0.25),
+"transitions": PackedFloat32Array(-2, -2, -2),
+"update": 0,
+"values": [0.08726646259971647, 0.0, -0.08726646]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oansv"]
+_data = {
+&"RESET": SubResource("Animation_oansv"),
+&"wobble": SubResource("Animation_78o78")
+}
+
+[node name="EnemyBase" type="CharacterBody2D" unique_id=733239099 node_paths=PackedStringArray("movement_component", "gravity_component", "tracker_component", "health_component", "jump_component", "jump_detector_component", "animation_component", "wobble_animator") groups=["enemies"]]
 collision_layer = 4
 collision_mask = 33
 script = ExtResource("1_xuskm")
@@ -21,6 +83,7 @@ health_component = NodePath("Components/HealthComponent")
 jump_component = NodePath("Components/JumpComponent")
 jump_detector_component = NodePath("Components/JumpDetectorComponent")
 animation_component = NodePath("Components/AnimationComponent")
+wobble_animator = NodePath("WobbleAnimator")
 
 [node name="Visuals" type="Node2D" parent="." unique_id=434325312]
 
@@ -57,3 +120,6 @@ body = NodePath("..")
 
 [node name="JumpTrigger" type="RayCast2D" parent="Raycasts" unique_id=1431579325]
 target_position = Vector2(20, 0)
+
+[node name="WobbleAnimator" type="AnimationPlayer" parent="." unique_id=741434837]
+libraries/ = SubResource("AnimationLibrary_oansv")

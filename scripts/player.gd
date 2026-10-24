@@ -27,8 +27,8 @@ func animate () -> void:
 	animation_component.handle_horizontal_flip(get_global_mouse_position().x - global_position.x,false)
 	if is_on_floor_only() and abs(velocity.x) > 0:
 		animation_player.play("wobble")
-	elif animation_player.is_playing() and animation_player.current_animation != "reset":
-		animation_player.play("reset")
+	elif animation_player.is_playing() and animation_player.current_animation != "RESET":
+		animation_player.play("RESET")
 
 func handle_click_behaviour (delta: float) -> void:
 	var shooting: bool = PlayerStatus.current_click_mode == PlayerStatus.CLICK_MODE.SHOOT

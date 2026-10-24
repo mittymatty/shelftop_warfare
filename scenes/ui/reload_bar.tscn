@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://ckbwe46oi0hce"]
 
-[ext_resource type="Script" uid="uid://di5r3mjmwtc65" path="res://scripts/reload_bar.gd" id="1_o8rq8"]
+[ext_resource type="Script" uid="uid://di5r3mjmwtc65" path="res://scripts/ui/reload_bar.gd" id="1_o8rq8"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hy6xw"]
 bg_color = Color(0.6, 0.6, 0.6, 0.3019608)

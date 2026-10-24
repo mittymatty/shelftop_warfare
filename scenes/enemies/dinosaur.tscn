@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://b3anqa6k5sx3w"]
 
 [ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_m8748"]
-[ext_resource type="Script" uid="uid://d2bhalw25axvp" path="res://scripts/touch_damage_enemy.gd" id="2_jsl0y"]
+[ext_resource type="Script" uid="uid://d2bhalw25axvp" path="res://scripts/enemies/touch_damage_enemy.gd" id="2_jsl0y"]
 [ext_resource type="Texture2D" uid="uid://b7u2bsdmlx3th" path="res://assets/enemies/dinasaur.png" id="2_tj4sg"]
 [ext_resource type="PackedScene" uid="uid://ygux51qhvuoa" path="res://scenes/components/touch_damager_component.tscn" id="4_jsl0y"]
 

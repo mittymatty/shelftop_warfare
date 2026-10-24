@@ -3,8 +3,8 @@
 [ext_resource type="Shader" uid="uid://cv4hcn5kggcxk" path="res://scripts/menu.gdshader" id="1_s6yae"]
 [ext_resource type="Texture2D" uid="uid://bwf2cvuh5n1m2" path="res://assets/soldier backround.png" id="2_qc1o2"]
 [ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="3_2cu4s"]
-[ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://cardboard button.tres" id="4_36kui"]
-[ext_resource type="Script" uid="uid://uwargdxll2jn" path="res://back_to_menu.gd" id="5_36kui"]
+[ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://resources/cardboard button.tres" id="4_36kui"]
+[ext_resource type="Script" uid="uid://uwargdxll2jn" path="res://scripts/ui/back_to_menu.gd" id="5_36kui"]
 [ext_resource type="Texture2D" uid="uid://bqxnmhy74ad34" path="res://assets/images (3).jpg" id="6_1lvlj"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2cu4s"]

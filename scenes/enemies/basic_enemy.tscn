@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cwvbinbhvljq5"]
 
 [ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_dg3yh"]
-[ext_resource type="Script" uid="uid://d2bhalw25axvp" path="res://scripts/touch_damage_enemy.gd" id="2_a6qa7"]
+[ext_resource type="Script" uid="uid://d2bhalw25axvp" path="res://scripts/enemies/touch_damage_enemy.gd" id="2_a6qa7"]
 [ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/front soldier.png" id="3_4mpuu"]
 [ext_resource type="PackedScene" uid="uid://ygux51qhvuoa" path="res://scenes/components/touch_damager_component.tscn" id="3_p6ar2"]
 

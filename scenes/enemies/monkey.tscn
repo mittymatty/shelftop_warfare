@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8t2fpodo36ne"]
 
 [ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_5ychv"]
-[ext_resource type="Script" uid="uid://cytk6cp1my5oo" path="res://scripts/monkey.gd" id="2_icn2m"]
+[ext_resource type="Script" uid="uid://cytk6cp1my5oo" path="res://scripts/enemies/monkey.gd" id="2_icn2m"]
 [ext_resource type="Texture2D" uid="uid://cwep2o78cjd02" path="res://assets/enemies/white monkey.png" id="3_icn2m"]
 [ext_resource type="PackedScene" uid="uid://ygux51qhvuoa" path="res://scenes/components/touch_damager_component.tscn" id="4_icn2m"]
 
