@@ -7,5 +7,4 @@
 script = ExtResource("1_w68yn")
 troop_name = "Rocket"
 troop = ExtResource("2_arbho")
-blocks_cost = 6
 metadata/_custom_type_script = "uid://d0ehi87n8i5lp"

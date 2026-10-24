@@ -7,13 +7,13 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hy6xw"]
 radius = 25.0
-height = 78.0
+height = 100.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_cgqta"]
 radius = 23.0
 height = 87.0
 
-[node name="EnemyBase" unique_id=733239099 node_paths=PackedStringArray("touch_damager_component") instance=ExtResource("1_m8748")]
+[node name="Dinosaur" unique_id=733239099 node_paths=PackedStringArray("touch_damager_component") instance=ExtResource("1_m8748")]
 script = ExtResource("2_jsl0y")
 touch_damager_component = NodePath("Components/TouchDamagerComponent")
 

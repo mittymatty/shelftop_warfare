@@ -5,7 +5,6 @@ class_name Explosion extends Area2D
 
 func scan (delta: float) -> void:
 	for body: Node2D in get_overlapping_bodies():
-		print(body)
 		if "health_component" in body:
 			var HC: HealthComponent = body.health_component
 			HC.take_damage(damage_per_second * delta,knockback,global_position)

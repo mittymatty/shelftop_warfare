@@ -36,7 +36,7 @@ func _physics_process(delta: float) -> void:
 		velocity.y = 50
 		handle_parachute()
 	
-	health_component.handle_regen(delta)
+	#health_component.handle_regen(delta)
 	movement_component.handle_horizontal_movement(self,0.0)
 	var should_reload: bool = gun_component.ammo == 0 or gun_component.ammo < gun_component.max_ammo and !tracker_component.tracker_target
 

@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://dcf2l4o3eptsv" path="res://scenes/waves/wave_18.tscn" id="19_yv0u1"]
 [ext_resource type="PackedScene" uid="uid://oacadfc7ti8o" path="res://scenes/waves/wave_19.tscn" id="20_wltlc"]
 [ext_resource type="PackedScene" uid="uid://et44b36uh3gj" path="res://scenes/waves/wave_20.tscn" id="21_styym"]
+[ext_resource type="Texture2D" uid="uid://cy63j6y3vyw0w" path="res://assets/cardboard Box.png" id="35_tl7to"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(2574, 48)
@@ -242,3 +243,16 @@ one_way_collision = true
 
 [node name="YellowTint" type="CanvasModulate" parent="." unique_id=1209719788]
 color = Color(0.93909043, 0.83996385, 0.6496892, 1)
+
+[node name="CardboardBox" type="Sprite2D" parent="." unique_id=777250387]
+z_index = 2
+position = Vector2(-609, 312)
+scale = Vector2(3, 3)
+texture = ExtResource("35_tl7to")
+
+[node name="CardboardBox2" type="Sprite2D" parent="." unique_id=798458670]
+z_index = 2
+position = Vector2(1667, 315)
+scale = Vector2(3, 3)
+texture = ExtResource("35_tl7to")
+flip_h = true

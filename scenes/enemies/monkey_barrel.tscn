@@ -12,6 +12,7 @@ height = 52.0
 [node name="MonkeyBarrel" unique_id=733239099 instance=ExtResource("1_1g6rk")]
 script = ExtResource("2_nqlv3")
 trojan_enemies = Array[PackedScene]([ExtResource("3_nqlv3"), ExtResource("3_nqlv3"), ExtResource("3_nqlv3"), ExtResource("3_nqlv3")])
+wobble_walk = false
 
 [node name="MonkeyBarrel" type="Sprite2D" parent="Visuals" parent_id_path=PackedInt32Array(434325312) index="0" unique_id=280413241]
 texture = ExtResource("3_t58t6")

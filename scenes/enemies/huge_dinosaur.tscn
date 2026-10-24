@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://damvljss3klrf"]
+
+[ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_vxrke"]
+[ext_resource type="Texture2D" uid="uid://b7u2bsdmlx3th" path="res://assets/enemies/dinasaur.png" id="2_vx4ou"]
+[ext_resource type="PackedScene" uid="uid://ygux51qhvuoa" path="res://scenes/components/touch_damager_component.tscn" id="3_vx4ou"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i4jvq"]
+radius = 39.0
+height = 148.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vxrke"]
+radius = 36.0
+height = 142.0
+
+[node name="HugeDinosaur" unique_id=733239099 instance=ExtResource("1_vxrke")]
+
+[node name="Sprite2D" type="Sprite2D" parent="Visuals" parent_id_path=PackedInt32Array(434325312) index="0" unique_id=1000845874]
+modulate = Color(1, 0, 0, 1)
+scale = Vector2(2, 2)
+texture = ExtResource("2_vx4ou")
+
+[node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="0" unique_id=1130167078]
+max_health = 450.0
+
+[node name="TouchDamagerComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="7" unique_id=934853369 instance=ExtResource("3_vx4ou")]
+damage = 50.0
+knockback = Vector2(500, -50)
+
+[node name="CooldownTimer" parent="Components/TouchDamagerComponent" index="0" unique_id=1788332149]
+wait_time = 1.0
+
+[node name="Collision" parent="." index="4" unique_id=1302760824]
+position = Vector2(3, 12)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_i4jvq")
+
+[node name="TouchDamager" type="Area2D" parent="." index="7" unique_id=804815326]
+collision_layer = 0
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchDamager" index="0" unique_id=239507699]
+position = Vector2(11, 6)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_vxrke")
+
+[editable path="Components/TouchDamagerComponent"]

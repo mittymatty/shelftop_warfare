@@ -68,13 +68,11 @@ offset_bottom = -43.0
 always_visible = true
 body = NodePath("..")
 
-[node name="HealthComponent" parent="." unique_id=1130167078 node_paths=PackedStringArray("body", "regen_delay_timer") instance=ExtResource("4_lqnnu")]
+[node name="HealthComponent" parent="." unique_id=1130167078 node_paths=PackedStringArray("body") instance=ExtResource("4_lqnnu")]
 max_health = 500.0
 knockback_multiplier = 0.0
 i_time = true
 body = NodePath("..")
-regen_delay_timer = NodePath("../RegenDelayTimer")
-regen_per_second = 3.0
 
 [node name="I_timer" parent="HealthComponent" index="0" unique_id=1350377943]
 wait_time = 0.25

@@ -29,7 +29,7 @@ func end_wave () -> void:
 func make_wave () -> void:
 	var wave_to_make: PackedScene = remaining_waves.pop_front()
 	var new_wave: Node2D = wave_to_make.instantiate()
-	PlayerStatus.current_wave = waves.find(wave_to_make) + 1 # Otherwise the waves would start on 0
+	PlayerStatus.current_wave += 1 # Otherwise the waves would start on 0 #waves.find(wave_to_make) +
 	add_child(new_wave)
 	SignalBus.emit_begin_wave()
 	current_wave = new_wave
