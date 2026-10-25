@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://6qj1t1k63whu"]
 
-[ext_resource type="PackedScene" uid="uid://dwoarnchrrpbi" path="res://scenes/bedroom.tscn" id="1_l34lt"]
+[ext_resource type="PackedScene" uid="uid://dwoarnchrrpbi" path="res://scenes/bedrooms/base_bedroom.tscn" id="1_l34lt"]
 [ext_resource type="PackedScene" uid="uid://dhvylm8fkrtvk" path="res://scenes/waves/wave_1.tscn" id="2_cwf18"]
 [ext_resource type="PackedScene" uid="uid://ouml5ppft5gh" path="res://scenes/waves/wave_2.tscn" id="3_b7yg0"]
 [ext_resource type="PackedScene" uid="uid://7kq4iyppblrd" path="res://scenes/waves/wave_3.tscn" id="4_nloxn"]
@@ -36,6 +36,11 @@
 [ext_resource type="PackedScene" uid="uid://ur1eiu638y32" path="res://scenes/waves/wave_33.tscn" id="34_eku2d"]
 [ext_resource type="PackedScene" uid="uid://1j74hvdwcokb" path="res://scenes/waves/wave_34.tscn" id="35_2cx0u"]
 [ext_resource type="PackedScene" uid="uid://c5illkh4rkmqw" path="res://scenes/waves/wave_35.tscn" id="36_i7ecw"]
+[ext_resource type="AudioStream" uid="uid://bsj23kyoujbt8" path="res://audio/music/medium.ogg" id="37_p4h6x"]
 
 [node name="Bedroom" unique_id=602288621 instance=ExtResource("1_l34lt")]
 waves = Array[PackedScene]([ExtResource("2_cwf18"), ExtResource("3_b7yg0"), ExtResource("4_nloxn"), ExtResource("5_no7f0"), ExtResource("6_3lll3"), ExtResource("7_cfhqn"), ExtResource("8_ndgs3"), ExtResource("9_v8ftf"), ExtResource("10_r41u6"), ExtResource("11_6qr8x"), ExtResource("12_fncnc"), ExtResource("13_e8n77"), ExtResource("14_lphs7"), ExtResource("15_8w2sr"), ExtResource("16_ca2cx"), ExtResource("17_1f025"), ExtResource("18_vdyci"), ExtResource("19_u8knn"), ExtResource("20_wlkp6"), ExtResource("21_wqfrg"), ExtResource("22_d577i"), ExtResource("23_7msde"), ExtResource("24_wjo7q"), ExtResource("25_4hf4v"), ExtResource("26_iwvkd"), ExtResource("27_lqcbx"), ExtResource("28_x3rmh"), ExtResource("29_33wm6"), ExtResource("30_lul10"), ExtResource("31_2we2h"), ExtResource("32_2sl64"), ExtResource("33_cq8f3"), ExtResource("34_eku2d"), ExtResource("35_2cx0u"), ExtResource("36_i7ecw")])
+
+[node name="Music" parent="." index="0" unique_id=1646441930]
+stream = ExtResource("37_p4h6x")
+parameters/looping = true

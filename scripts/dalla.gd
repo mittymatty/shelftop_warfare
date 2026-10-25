@@ -2,11 +2,12 @@ extends StaticBody2D
 
 @export var health_component: HealthComponent
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var explosion: AudioStreamPlayer = $Explosion
 
 const GAME_OVER_SCREEN = preload("uid://s58sfxjarahd")
 
 func on_destroyed () -> void:
-	
+	explosion.play()
 	SignalBus.emit_game_over()
 	
 	animation_player.play("shake")

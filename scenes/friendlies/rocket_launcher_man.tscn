@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c0v6l6r5fiqtr" path="res://scenes/friendlies/army_man.tscn" id="1_s6y14"]
 [ext_resource type="PackedScene" uid="uid://buk0topn0a7gu" path="res://scenes/projectiles/player_rocket.tscn" id="2_cjptc"]
 [ext_resource type="Texture2D" uid="uid://fufdrh0wfohb" path="res://assets/troopers/rocket_launcher.png" id="3_cjptc"]
+[ext_resource type="AudioStream" uid="uid://ddk3nh0hlclsd" path="res://audio/misslie_launch.ogg" id="4_lyq0t"]
 
 [node name="RocketLauncherMan" unique_id=365000319 instance=ExtResource("1_s6y14")]
 
@@ -24,6 +25,10 @@ texture = ExtResource("3_cjptc")
 
 [node name="Muzzle" parent="Visuals/Gun" index="0" unique_id=243604337]
 position = Vector2(7.5, -2.5)
+
+[node name="Missile" type="AudioStreamPlayer2D" parent="." index="9" unique_id=1060377679]
+stream = ExtResource("4_lyq0t")
+max_distance = 500.0
 
 [editable path="Components/GunComponent"]
 [editable path="Components/HealthComponent"]

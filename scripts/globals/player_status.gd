@@ -19,7 +19,6 @@ var current_wave: int = 0
 var active_troops: int = 0
 var active_enemies: int = 0
 
-
 var all_possible_troop_data: Array[TroopData] = [
 	preload("res://resources/pistol_trooper.tres"),
 	preload("res://resources/rifle_trooper.tres"),

@@ -12,7 +12,10 @@ extends Control
 @onready var hard: Button = $DifficultySelect/VBoxContainer/Hard
 @onready var monke: Button = $DifficultySelect/VBoxContainer/Monke
 
-const BEDROOM: PackedScene = preload("uid://dwoarnchrrpbi")
+const BEDROOM_EASY = preload("uid://6g8srlqwcg5n")
+const BEDROOM_MEDIUM = preload("uid://6qj1t1k63whu")
+const BEDROOM_HARD = preload("uid://dacrbjsotj76l")
+const BEDROOM_MONKE = preload("uid://bsm2d3slkfb6n")
 
 func on_start_button_pressed () -> void:
 	main.hide()
@@ -33,4 +36,7 @@ func _ready() -> void:
 	start_button.pressed.connect(on_start_button_pressed)
 	go_back.pressed.connect(on_go_back_pressed)
 	
-	easy.pressed.connect(switch_to_scene.bind(BEDROOM))
+	easy.pressed.connect(switch_to_scene.bind(BEDROOM_EASY))
+	medium.pressed.connect(switch_to_scene.bind(BEDROOM_MEDIUM))
+	hard.pressed.connect(switch_to_scene.bind(BEDROOM_HARD))
+	monke.pressed.connect(switch_to_scene.bind(BEDROOM_MONKE))

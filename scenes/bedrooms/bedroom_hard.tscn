@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://dacrbjsotj76l"]
 
-[ext_resource type="PackedScene" uid="uid://dwoarnchrrpbi" path="res://scenes/bedroom.tscn" id="1_5ce8a"]
+[ext_resource type="PackedScene" uid="uid://dwoarnchrrpbi" path="res://scenes/bedrooms/base_bedroom.tscn" id="1_5ce8a"]
 [ext_resource type="PackedScene" uid="uid://dhvylm8fkrtvk" path="res://scenes/waves/wave_1.tscn" id="2_h1428"]
 [ext_resource type="PackedScene" uid="uid://ouml5ppft5gh" path="res://scenes/waves/wave_2.tscn" id="3_6vbjc"]
 [ext_resource type="PackedScene" uid="uid://7kq4iyppblrd" path="res://scenes/waves/wave_3.tscn" id="4_1i8iy"]
@@ -51,6 +51,11 @@
 [ext_resource type="PackedScene" uid="uid://dejo1vsrmlpsf" path="res://scenes/waves/wave_48.tscn" id="49_hjp6o"]
 [ext_resource type="PackedScene" uid="uid://fu3fxct50r60" path="res://scenes/waves/wave_49.tscn" id="50_ajsis"]
 [ext_resource type="PackedScene" uid="uid://cycvex50leeg4" path="res://scenes/waves/wave_50.tscn" id="51_fv8cu"]
+[ext_resource type="AudioStream" uid="uid://bgru72ev1uskp" path="res://audio/music/hard.ogg" id="52_2qjek"]
 
 [node name="Bedroom" unique_id=602288621 instance=ExtResource("1_5ce8a")]
 waves = Array[PackedScene]([ExtResource("2_h1428"), ExtResource("3_6vbjc"), ExtResource("4_1i8iy"), ExtResource("5_n84qr"), ExtResource("6_0hbjg"), ExtResource("7_uhx5r"), ExtResource("8_s0l83"), ExtResource("9_j7bbu"), ExtResource("10_73752"), ExtResource("11_bk6l6"), ExtResource("12_yn6ah"), ExtResource("13_6lrja"), ExtResource("14_eovuj"), ExtResource("15_ddhqk"), ExtResource("16_ia8kc"), ExtResource("17_dmiid"), ExtResource("18_rn7dk"), ExtResource("19_iuhcy"), ExtResource("20_qvc01"), ExtResource("21_86lmy"), ExtResource("22_6kc4r"), ExtResource("23_82yo5"), ExtResource("24_46kag"), ExtResource("25_2sp70"), ExtResource("26_fedry"), ExtResource("27_sm107"), ExtResource("28_8w80j"), ExtResource("29_8wf2i"), ExtResource("30_d6b7v"), ExtResource("31_wlxdd"), ExtResource("32_37dkj"), ExtResource("33_xwst7"), ExtResource("34_kh15w"), ExtResource("35_sxe1u"), ExtResource("36_stedj"), ExtResource("37_xc2hu"), ExtResource("38_ci7sh"), ExtResource("39_p0ylb"), ExtResource("40_g50oi"), ExtResource("41_lul4n"), ExtResource("42_h15qj"), ExtResource("43_ncha1"), ExtResource("44_8y20s"), ExtResource("45_og48j"), ExtResource("46_momsq"), ExtResource("47_0y82i"), ExtResource("48_iy4ox"), ExtResource("49_hjp6o"), ExtResource("50_ajsis"), ExtResource("51_fv8cu")])
+
+[node name="Music" parent="." index="0" unique_id=1646441930]
+stream = ExtResource("52_2qjek")
+parameters/looping = true

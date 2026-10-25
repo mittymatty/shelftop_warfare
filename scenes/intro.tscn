@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://btolf7fiwoxk1"]
 
-[ext_resource type="Texture2D" uid="uid://dvid5ncgrbs3" path="res://assets/MITTY & GUMPY.jpg" id="1_ioskq"]
-[ext_resource type="Script" uid="uid://c04qlsvvt14s0" path="res://scripts/color_rect_2.gd" id="1_yjqpq"]
+[ext_resource type="Texture2D" uid="uid://dvid5ncgrbs3" path="res://assets/ui/MITTY & GUMPY.jpg" id="1_ioskq"]
+[ext_resource type="Script" uid="uid://c04qlsvvt14s0" path="res://scripts/ui/into.gd" id="1_yjqpq"]
 
 [node name="Control2" type="Control" unique_id=1028439312]
 layout_mode = 3

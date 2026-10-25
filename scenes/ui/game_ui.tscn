@@ -14,6 +14,9 @@
 [ext_resource type="Resource" uid="uid://ca6egkjw3vm77" path="res://resources/rifle_trooper.tres" id="9_fftnl"]
 [ext_resource type="Texture2D" uid="uid://c43h40g73nxtn" path="res://assets/enemies/monkey.png" id="10_bxde6"]
 [ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/troopers/toy_soldier.png" id="14_x0n6o"]
+[ext_resource type="Texture2D" uid="uid://cba51mig1rfsn" path="res://assets/ui/Red Block.png" id="15_aq72h"]
+[ext_resource type="AudioStream" uid="uid://8f0f05fb576m" path="res://audio/brick_click.ogg" id="16_pbku6"]
+[ext_resource type="AudioStream" uid="uid://86r8kvoaa0af" path="res://audio/brick_drop.ogg" id="17_i3ans"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u001w"]
 font = ExtResource("2_bma8u")
@@ -23,6 +26,11 @@ font_color = Color(0, 0, 0, 1)
 [sub_resource type="LabelSettings" id="LabelSettings_yvtb5"]
 font = ExtResource("2_bma8u")
 font_size = 40
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_s4xrl"]
+font = ExtResource("2_bma8u")
+font_size = 32
 font_color = Color(0, 0, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cgqta"]
@@ -47,6 +55,124 @@ font_size = 60
 font = ExtResource("2_bma8u")
 font_size = 25
 
+[sub_resource type="Animation" id="Animation_oqj4c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlocksGained:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(563, 47)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlocksGained:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BlocksGained:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_pbku6"]
+resource_name = "hide_blocks"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlocksGained:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, 115), Vector2(563, 58)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlocksGained:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.46666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.2, 0.2)]
+}
+
+[sub_resource type="Animation" id="Animation_aq72h"]
+resource_name = "show_blocks"
+length = 0.73
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("BlocksGained:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.26666668),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(563, 47), Vector2(563, 115)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("BlocksGained:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("BlocksGained:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.5, 0.6092271, 0.73),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, -0.08726646259971647, 0.08726646259971647, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oqj4c"]
+_data = {
+&"RESET": SubResource("Animation_oqj4c"),
+&"hide_blocks": SubResource("Animation_pbku6"),
+&"show_blocks": SubResource("Animation_aq72h")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_e6bmv"]
+font = ExtResource("2_bma8u")
+font_size = 40
+
 [node name="Game UI" type="Control" unique_id=1426189323]
 layout_mode = 3
 anchors_preset = 15
@@ -56,24 +182,26 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u001w")
 
-[node name="ButtonCardboard3" type="Sprite2D" parent="." unique_id=135776912]
-position = Vector2(122.25, 72)
+[node name="CardboardButtons" type="Node2D" parent="." unique_id=745007149]
+
+[node name="ButtonCardboard3" type="Sprite2D" parent="CardboardButtons" unique_id=135776912]
+position = Vector2(122, 59)
 scale = Vector2(1.4766667, 1)
 texture = ExtResource("2_crnce")
 
-[node name="ButtonCardboard2" type="Sprite2D" parent="." unique_id=884438680]
-position = Vector2(1025, 141)
+[node name="ButtonCardboard2" type="Sprite2D" parent="CardboardButtons" unique_id=884438680]
+position = Vector2(1007, 128)
 scale = Vector2(1.8533334, 1)
 texture = ExtResource("2_crnce")
 
-[node name="ButtonCardboard4" type="Sprite2D" parent="." unique_id=1828805552]
-position = Vector2(1025, 79)
+[node name="ButtonCardboard4" type="Sprite2D" parent="CardboardButtons" unique_id=1828805552]
+position = Vector2(1007, 66)
 scale = Vector2(1.4933333, 1)
 texture = ExtResource("2_crnce")
 
-[node name="ButtonCardboard" type="Sprite2D" parent="." unique_id=1530521629]
-position = Vector2(583, 80)
-scale = Vector2(2.8533332, 1)
+[node name="ButtonCardboard" type="Sprite2D" parent="CardboardButtons" unique_id=1530521629]
+position = Vector2(571.5, 93)
+scale = Vector2(2.8533332, 1.5757576)
 texture = ExtResource("2_crnce")
 
 [node name="Vitals" type="MarginContainer" parent="." unique_id=498502098]
@@ -84,7 +212,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 40
-theme_override_constants/margin_top = 40
+theme_override_constants/margin_top = 30
 theme_override_constants/margin_right = 40
 theme_override_constants/margin_bottom = 40
 
@@ -103,22 +231,19 @@ layout_mode = 2
 text = "Troops: 10/10"
 label_settings = SubResource("LabelSettings_u001w")
 
-[node name="Left" type="VBoxContainer" parent="Vitals" unique_id=1740020079]
+[node name="Middle" type="VBoxContainer" parent="Vitals" unique_id=829778117]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = -4
 
-[node name="HealthBar" parent="Vitals/Left" unique_id=1492475502 instance=ExtResource("2_u001w")]
-custom_minimum_size = Vector2(150, 20)
-layout_mode = 2
-always_visible = true
-
-[node name="Middle" type="HBoxContainer" parent="Vitals" unique_id=460445105]
+[node name="TopBar" type="HBoxContainer" parent="Vitals/Middle" unique_id=460445105]
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 10
 alignment = 1
 
-[node name="WaveCount" type="Label" parent="Vitals/Middle" unique_id=1626630923]
+[node name="WaveCount" type="Label" parent="Vitals/Middle/TopBar" unique_id=1626630923]
 visible = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -129,7 +254,7 @@ label_settings = SubResource("LabelSettings_yvtb5")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Vitals/Middle" unique_id=1753145639]
+[node name="TextureRect" type="TextureRect" parent="Vitals/Middle/TopBar" unique_id=1753145639]
 custom_maximum_size = Vector2(50, 50)
 layout_mode = 2
 offset_transform_enabled = true
@@ -138,15 +263,29 @@ offset_transform_scale = Vector2(1.25, 1.25)
 texture = ExtResource("4_qrkc0")
 expand_mode = 2
 
-[node name="BlocksCount" type="Label" parent="Vitals/Middle" unique_id=1721957325]
+[node name="BlocksCount" type="Label" parent="Vitals/Middle/TopBar" unique_id=1721957325]
 layout_mode = 2
 size_flags_horizontal = 4
-size_flags_vertical = 0
 theme_override_font_sizes/font_size = 90
 text = "idk"
 label_settings = SubResource("LabelSettings_yvtb5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="EnemiesCountLabel" type="Label" parent="Vitals/Middle" unique_id=1745638642]
+layout_mode = 2
+text = "Enemies: 0"
+label_settings = SubResource("LabelSettings_s4xrl")
+horizontal_alignment = 1
+
+[node name="Left" type="VBoxContainer" parent="Vitals" unique_id=1740020079]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="HealthBar" parent="Vitals/Left" unique_id=1492475502 instance=ExtResource("2_u001w")]
+custom_minimum_size = Vector2(150, 20)
+layout_mode = 2
+always_visible = true
 
 [node name="TroopSelect" type="MarginContainer" parent="." unique_id=1224922898]
 visible = false
@@ -368,10 +507,10 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -173.0
-offset_top = 98.0
-offset_right = 174.0
-offset_bottom = 136.0
+offset_left = -279.0
+offset_top = 130.0
+offset_right = 280.0
+offset_bottom = 170.0
 grow_horizontal = 2
 theme_override_fonts/font = ExtResource("2_bma8u")
 theme_override_font_sizes/font_size = 40
@@ -400,3 +539,50 @@ label_settings = SubResource("LabelSettings_xrivr")
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=2142885757]
+libraries/ = SubResource("AnimationLibrary_oqj4c")
+
+[node name="BlocksGained" type="Label" parent="." unique_id=1185001512]
+z_index = -1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -13.0
+offset_top = -277.0
+offset_right = 30.0
+offset_bottom = -236.99994
+grow_horizontal = 2
+grow_vertical = 2
+text = "+4"
+label_settings = SubResource("LabelSettings_e6bmv")
+horizontal_alignment = 1
+
+[node name="Block" type="TextureRect" parent="BlocksGained" unique_id=1935125786]
+layout_mode = 0
+offset_left = -46.0
+offset_right = -6.0
+offset_bottom = 40.0
+texture = ExtResource("15_aq72h")
+
+[node name="MuteAudio" type="TextureButton" parent="." unique_id=1734787337]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+toggle_mode = true
+
+[node name="MuteMusic" type="TextureButton" parent="." unique_id=2067750376]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BrickClick" type="AudioStreamPlayer" parent="." unique_id=1632625652]
+stream = ExtResource("16_pbku6")
+volume_db = -5.0
+
+[node name="BrickDrop" type="AudioStreamPlayer" parent="." unique_id=386166907]
+stream = ExtResource("17_i3ans")
+volume_db = -5.0

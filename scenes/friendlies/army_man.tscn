@@ -13,6 +13,8 @@
 [ext_resource type="Texture2D" uid="uid://gatfbwy2d0ov" path="res://assets/troopers/saluting_soldier.png" id="10_6jgr1"]
 [ext_resource type="PackedScene" uid="uid://ckbwe46oi0hce" path="res://scenes/ui/reload_bar.tscn" id="11_rjri2"]
 [ext_resource type="PackedScene" uid="uid://cxycyknysydd1" path="res://scenes/ui/health_bar.tscn" id="13_qxc4t"]
+[ext_resource type="AudioStream" uid="uid://dqjaub27ueqdp" path="res://audio/pistol.ogg" id="14_qxc4t"]
+[ext_resource type="AudioStream" uid="uid://7wy1fcb31d6o" path="res://audio/basic_reload.ogg" id="15_g7fkn"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vr6e3"]
 radius = 5.0
@@ -44,10 +46,12 @@ one_shot = true
 
 [node name="GravityComponent" parent="Components" unique_id=827299611 instance=ExtResource("3_5tgx5")]
 
-[node name="GunComponent" parent="Components" unique_id=769225365 node_paths=PackedStringArray("gun_visuals", "muzzle") instance=ExtResource("4_vr6e3")]
+[node name="GunComponent" parent="Components" unique_id=769225365 node_paths=PackedStringArray("gun_visuals", "muzzle", "fire_sound", "reload_sound") instance=ExtResource("4_vr6e3")]
 bullet = ExtResource("5_egd3g")
 gun_visuals = NodePath("../../Visuals/Gun")
 muzzle = NodePath("../../Visuals/Gun/Muzzle")
+fire_sound = NodePath("../../Gunshot")
+reload_sound = NodePath("../../Reload")
 bullet_damage = 6.0
 bullet_speed = 350.0
 max_ammo = 5
@@ -109,6 +113,15 @@ visible = false
 offset_top = -25.0
 offset_bottom = -23.0
 body = NodePath("..")
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="." unique_id=1320999636]
+stream = ExtResource("14_qxc4t")
+volume_db = -10.0
+max_distance = 500.0
+
+[node name="Reload" type="AudioStreamPlayer2D" parent="." unique_id=2023200579]
+stream = ExtResource("15_g7fkn")
+max_distance = 500.0
 
 [editable path="Components/GunComponent"]
 [editable path="Components/HealthComponent"]

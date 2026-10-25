@@ -13,6 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://cjro72gvhep3e" path="res://scenes/components/health_component.tscn" id="7_ur7pv"]
 [ext_resource type="PackedScene" uid="uid://brjdkg4eghgpa" path="res://scenes/components/animation_component.tscn" id="9_3v2ag"]
 [ext_resource type="PackedScene" uid="uid://ckbwe46oi0hce" path="res://scenes/ui/reload_bar.tscn" id="12_3v2ag"]
+[ext_resource type="AudioStream" uid="uid://bbt5j5mp4bp5w" path="res://audio/rifle.ogg" id="14_f1ej7"]
+[ext_resource type="AudioStream" uid="uid://bgxktbjruvt8v" path="res://audio/rifle_reload.ogg" id="15_oprun"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_d2wvv"]
 radius = 5.0
@@ -130,10 +132,12 @@ speed = 120.0
 
 [node name="GravityComponent" parent="Components" unique_id=827299611 instance=ExtResource("6_tuyoq")]
 
-[node name="GunComponent" parent="Components" unique_id=769225365 node_paths=PackedStringArray("gun_visuals", "muzzle") instance=ExtResource("6_smehm")]
+[node name="GunComponent" parent="Components" unique_id=769225365 node_paths=PackedStringArray("gun_visuals", "muzzle", "fire_sound", "reload_sound") instance=ExtResource("6_smehm")]
 bullet = ExtResource("7_d2wvv")
 gun_visuals = NodePath("../../Visuals/Gun")
 muzzle = NodePath("../../Visuals/Gun/Muzzle")
+fire_sound = NodePath("../../Sounds/Gunshot")
+reload_sound = NodePath("../../Sounds/Reload")
 
 [node name="ReloadTimer" parent="Components/GunComponent" index="1" unique_id=343490544]
 wait_time = 1.5
@@ -152,6 +156,15 @@ position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_d2wvv")
 
 [node name="Sounds" type="Node2D" parent="." unique_id=1689226807]
+
+[node name="Gunshot" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1832711391]
+stream = ExtResource("14_f1ej7")
+volume_db = -2.0
+max_distance = 100.0
+
+[node name="Reload" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1204732738]
+stream = ExtResource("15_oprun")
+max_distance = 100.0
 
 [node name="Land" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1104987725]
 

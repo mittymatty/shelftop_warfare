@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dowikkwd5jors" path="res://assets/a single dollar.png" id="1_3g1ke"]
 [ext_resource type="Script" uid="uid://besewhkdslgql" path="res://scripts/dalla.gd" id="1_i4jvq"]
+[ext_resource type="AudioStream" uid="uid://cecdfop0v5od7" path="res://audio/explosion.mp3" id="2_7qj3y"]
 [ext_resource type="PackedScene" uid="uid://cxycyknysydd1" path="res://scenes/ui/health_bar.tscn" id="3_7qj3y"]
 [ext_resource type="PackedScene" uid="uid://cjro72gvhep3e" path="res://scenes/components/health_component.tscn" id="4_lqnnu"]
 
@@ -91,6 +92,10 @@ collision_layer = 64
 collision_mask = 0
 script = ExtResource("1_i4jvq")
 health_component = NodePath("HealthComponent")
+
+[node name="Explosion" type="AudioStreamPlayer" parent="." unique_id=412809401]
+stream = ExtResource("2_7qj3y")
+volume_db = -5.0
 
 [node name="ASingleDollar" type="Sprite2D" parent="." unique_id=612956156]
 texture = ExtResource("1_3g1ke")

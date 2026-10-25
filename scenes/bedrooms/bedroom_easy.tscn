@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://6g8srlqwcg5n"]
+
+[ext_resource type="PackedScene" uid="uid://dwoarnchrrpbi" path="res://scenes/bedrooms/base_bedroom.tscn" id="1_ejmui"]
+[ext_resource type="AudioStream" uid="uid://hrqr4momiote" path="res://audio/music/easy.ogg" id="2_dkprg"]
+
+[node name="Bedroom" unique_id=602288621 instance=ExtResource("1_ejmui")]
+
+[node name="Music" parent="." index="0" unique_id=1646441930]
+stream = ExtResource("2_dkprg")
+parameters/looping = true

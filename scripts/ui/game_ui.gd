@@ -3,10 +3,11 @@ extends Control
 @onready var gun_component: GunComponent = player.gun_component
 
 @onready var health_bar: HealthBar = $Vitals/Left/HealthBar
-@onready var wave_count: Label = $Vitals/Middle/WaveCount
-@onready var blocks_count: Label = $Vitals/Middle/BlocksCount
+@onready var wave_count: Label = $Vitals/Middle/TopBar/WaveCount
+@onready var blocks_count: Label = $Vitals/Middle/TopBar/BlocksCount
 @onready var ammo_counter: Label = $Vitals/Right/AmmoCounter
 @onready var troop_counter: Label = $Vitals/Right/TroopCounter
+@onready var enemies_count_label: Label = $Vitals/Middle/EnemiesCountLabel
 
 @onready var troop_select: MarginContainer = $TroopSelect
 @onready var troop_button_container: HBoxContainer = $TroopSelect/VBoxContainer/MarginContainer/TroopButtonContainer
@@ -26,6 +27,14 @@ extends Control
 @onready var increase_troops: Button = $TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops
 @onready var troop_increase_price_label: Label = $TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer/TroopIncreasePriceLabel
 
+var previous_blocks_amount: int = PlayerStatus.blocks
+
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var brick_click: AudioStreamPlayer = $BrickClick
+@onready var brick_drop: AudioStreamPlayer = $BrickDrop
+@onready var blocks_gained: Label = $BlocksGained
+
+
 const TROOP_BUTTON = preload("uid://bdmyssrhu4j55")
 var trooper_buttons_at_a_time: int = 3
 
@@ -43,7 +52,21 @@ func on_ammo_changed () -> void:
 	ammo_counter.text = "Ammo: " + str(gun_component.ammo) + "/" + str(gun_component.max_ammo)
 
 func on_blocks_changed () -> void:
-	blocks_count.text = ": " + str(PlayerStatus.blocks)
+	var new_blocks: int = PlayerStatus.blocks
+	
+	if new_blocks < previous_blocks_amount:
+		brick_click.play()
+		previous_blocks_amount = new_blocks
+	else: #Gained bricks
+		brick_drop.play()
+		blocks_gained.text = "+" + str(new_blocks - previous_blocks_amount)
+		previous_blocks_amount = new_blocks
+		animation_player.play("show_blocks")
+		await animation_player.animation_finished
+		await get_tree().create_timer(0.5).timeout
+		animation_player.play("hide_blocks")
+	
+	blocks_count.text = ": " + str(new_blocks)
 
 func open_troop_selector () -> void:
 	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.NONE
@@ -59,8 +82,6 @@ func close_troop_selector () -> void:
 	troop_select.hide()
 	next_wave_button.show()
 	on_troops_changed()
-	#if !enter_placing_mode:
-		#SignalBus.emit_setup_wave()
 
 func on_wave_change () -> void:
 	next_wave_button.hide()
@@ -95,8 +116,9 @@ func on_troops_changed () -> void:
 	unplaced_troops_notice.visible = PlayerStatus.stored_troops.size() != 0
 
 func on_next_wave_button_pressed() -> void:
-	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.SHOOT
 	SignalBus.emit_setup_wave()
+	await get_tree().create_timer(0.5).timeout # So he doesn't shoot immediately
+	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.SHOOT
 
 func on_increase_troops_pressed() -> void:
 	if PlayerStatus.blocks >= PlayerStatus.current_increase_max_troops_cost:
@@ -108,10 +130,17 @@ func on_increase_troops_pressed() -> void:
 		increase_troops.hide()
 		troop_increase_price_label.text = str(PlayerStatus.current_increase_max_troops_cost)
 
+func handle_enemy_count () -> void:
+	#enemies_count_label.visible = PlayerStatus.active_enemies > 0
+	enemies_count_label.text = "Enemies Left: " + str(PlayerStatus.active_enemies)
+
+func _process(_delta: float) -> void:
+	handle_enemy_count()
+
 func _ready() -> void:
 	health_bar.body = player
 	on_ammo_changed()
-	on_blocks_changed()
+	blocks_count.text = ": " + str(PlayerStatus.blocks)
 	on_troops_changed()
 	
 	if PlayerStatus.blocks > 0:

@@ -9,6 +9,10 @@ class_name GunComponent extends Node
 @export var cooldown_timer: Timer
 @export var reload_timer: Timer
 
+@export_subgroup("Optional Nodes")
+@export var fire_sound: AudioStreamPlayer2D
+@export var reload_sound: AudioStreamPlayer2D
+
 @export_subgroup("Configuration")
 @export var bullet_damage: float = 10.0
 @export var bullet_speed: float = 400.0
@@ -46,6 +50,9 @@ func rotate_to_target (_delta: float, target_pos: Vector2) -> void:
 	gun_visuals.look_at(target_pos)
 
 func shoot () -> void:
+	if fire_sound:
+		fire_sound.play()
+	
 	for i in range(bullets_per_shot):
 		var angle_offset = lerp(-maximum_spread_angle, maximum_spread_angle, float(i)/bullets_per_shot)
 		var b: Bullet = bullet.instantiate()
@@ -59,6 +66,8 @@ func shoot () -> void:
 func reload_gun () -> void:
 	reload.emit()
 	reload_timer.start()
+	if reload_sound:
+		reload_sound.play()
 	await reload_timer.timeout
 	ammo = max_ammo
 	ammo_changed.emit()

@@ -1,5 +1,10 @@
 extends ColorRect
 
+const MENU = preload("uid://rsrpe7sqso4h")
+
+func _process(_delta: float) -> void:
+	if Input.is_action_just_pressed("skip"):
+		get_tree().change_scene_to_packed(MENU)
 
 func _ready():
 	# Start black
@@ -19,5 +24,4 @@ func _ready():
 	await fade_out.finished
 	
 	# CHANGE SCENE
-	get_tree().change_scene_to_file("res://scenes/menu.tscn")
-	pass
+	get_tree().change_scene_to_packed(MENU)
