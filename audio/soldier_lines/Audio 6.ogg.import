@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cnf4jb3vp5kn6"
+path="res://.godot/imported/Audio 6.ogg-89e06517e3b0882bb047d1ad3a16e7a5.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/soldier_lines/Audio 6.ogg"
+dest_files=["res://.godot/imported/Audio 6.ogg-89e06517e3b0882bb047d1ad3a16e7a5.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -15,6 +15,17 @@
 [ext_resource type="PackedScene" uid="uid://cxycyknysydd1" path="res://scenes/ui/health_bar.tscn" id="13_qxc4t"]
 [ext_resource type="AudioStream" uid="uid://dqjaub27ueqdp" path="res://audio/pistol.ogg" id="14_qxc4t"]
 [ext_resource type="AudioStream" uid="uid://7wy1fcb31d6o" path="res://audio/basic_reload.ogg" id="15_g7fkn"]
+[ext_resource type="AudioStream" uid="uid://cnf4jb3vp5kn6" path="res://audio/soldier_lines/Audio 6.ogg" id="16_cailu"]
+[ext_resource type="AudioStream" uid="uid://mtqydu2um8c1" path="res://audio/soldier_lines/Audio 7.ogg" id="17_186mq"]
+[ext_resource type="AudioStream" uid="uid://cfxp1o4wbt0q2" path="res://audio/soldier_lines/Audio 11.ogg" id="18_pv51q"]
+[ext_resource type="AudioStream" uid="uid://bw2s4ygepjidl" path="res://audio/soldier_lines/Audio 8.ogg" id="19_8g17i"]
+[ext_resource type="AudioStream" uid="uid://b31x0i5v6yrou" path="res://audio/soldier_lines/Audio 9.ogg" id="20_7lywj"]
+[ext_resource type="AudioStream" uid="uid://bf3i2ffigxj16" path="res://audio/soldier_lines/Audio 10.ogg" id="21_vt6tw"]
+[ext_resource type="AudioStream" uid="uid://lf4wvj8bahlc" path="res://audio/soldier_lines/Audio 1.ogg" id="22_51i4e"]
+[ext_resource type="AudioStream" uid="uid://b7g7p878dmi14" path="res://audio/soldier_lines/Audio 2.ogg" id="23_y30hs"]
+[ext_resource type="AudioStream" uid="uid://xk64vg056hwn" path="res://audio/soldier_lines/Audio 3.ogg" id="24_qxf46"]
+[ext_resource type="AudioStream" uid="uid://dh8swjfb0wmkp" path="res://audio/soldier_lines/Audio 4.ogg" id="25_6a1dg"]
+[ext_resource type="AudioStream" uid="uid://dfubbfxsm3m73" path="res://audio/soldier_lines/Audio 5.ogg" id="26_nps6i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vr6e3"]
 radius = 5.0
@@ -22,6 +33,20 @@ radius = 5.0
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hy6xw"]
 particle_flag_disable_z = true
 spread = 90.0
+
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xrivr"]
+streams_count = 11
+stream_0/stream = ExtResource("16_cailu")
+stream_1/stream = ExtResource("17_186mq")
+stream_2/stream = ExtResource("19_8g17i")
+stream_3/stream = ExtResource("20_7lywj")
+stream_4/stream = ExtResource("21_vt6tw")
+stream_5/stream = ExtResource("22_51i4e")
+stream_6/stream = ExtResource("23_y30hs")
+stream_7/stream = ExtResource("24_qxf46")
+stream_8/stream = ExtResource("25_6a1dg")
+stream_9/stream = ExtResource("26_nps6i")
+stream_10/stream = ExtResource("18_pv51q")
 
 [node name="ArmyMan" type="CharacterBody2D" unique_id=365000319 node_paths=PackedStringArray("movement_component", "gravity_component", "tracker_component", "animation_component", "gun_component", "health_component", "drop_chute_raycast", "parachute")]
 collision_layer = 2
@@ -127,6 +152,11 @@ max_distance = 500.0
 [node name="Reload" type="AudioStreamPlayer2D" parent="." unique_id=2023200579]
 stream = ExtResource("15_g7fkn")
 max_distance = 500.0
+
+[node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=1063269541]
+stream = SubResource("AudioStreamRandomizer_xrivr")
+autoplay = true
+max_distance = 600.0
 
 [editable path="Components/GunComponent"]
 [editable path="Components/HealthComponent"]
