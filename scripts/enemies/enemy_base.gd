@@ -15,11 +15,8 @@ class_name Enemy extends CharacterBody2D
 
 var target: PhysicsBody2D
 
-func destroy() -> void:
-	queue_free()
-
 func _ready() -> void:
-	SignalBus.game_over.connect(destroy)
+	SignalBus.game_over.connect(on_died)
 	PlayerStatus.active_enemies += 1
 	health_component.damaged.connect(on_damaged)
 	health_component.died.connect(on_died)
