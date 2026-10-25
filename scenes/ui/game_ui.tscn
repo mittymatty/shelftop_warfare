@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bdmyssrhu4j55" path="res://scenes/ui/troop_button.tscn" id="4_fct72"]
 [ext_resource type="Texture2D" uid="uid://c3yc434c1kxo8" path="res://assets/ui/blocks.png" id="4_qrkc0"]
 [ext_resource type="Texture2D" uid="uid://oks2sxp1t45s" path="res://assets/ui/box_9patch.png" id="4_ru5ln"]
-[ext_resource type="Script" uid="uid://bp1fso13ieon3" path="res://scripts/ui/health_bar.gd" id="5_aq72h"]
 [ext_resource type="FontFile" uid="uid://dn1dl7h18dgue" path="res://assets/fonts/YOSIA-SCRIBBLE.ttf" id="6_opxtl"]
 [ext_resource type="Texture2D" uid="uid://gatfbwy2d0ov" path="res://assets/troopers/saluting_soldier.png" id="6_v1bdg"]
 [ext_resource type="Resource" uid="uid://cnhk32lv3frjh" path="res://resources/pistol_trooper.tres" id="7_yvtb5"]
@@ -111,7 +110,6 @@ size_flags_horizontal = 0
 [node name="HealthBar" parent="Vitals/Left" unique_id=1492475502 instance=ExtResource("2_u001w")]
 custom_minimum_size = Vector2(150, 20)
 layout_mode = 2
-script = ExtResource("5_aq72h")
 always_visible = true
 
 [node name="Middle" type="HBoxContainer" parent="Vitals" unique_id=460445105]
@@ -316,19 +314,6 @@ icon = ExtResource("6_v1bdg")
 modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
-[node name="GameOverLabel" type="Label" parent="." unique_id=950604301]
-visible = false
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "Game Over..."
-label_settings = SubResource("LabelSettings_hy6xw")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="WinLabel" type="Label" parent="." unique_id=955396560]
 visible = false
 layout_mode = 1
@@ -410,3 +395,8 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "(Unplaced troops remain in storage)"
 label_settings = SubResource("LabelSettings_xrivr")
+
+[node name="GameOverScreen" type="TextureRect" parent="." unique_id=899068261]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0

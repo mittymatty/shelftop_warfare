@@ -15,7 +15,7 @@ collision_mask = 5
 script = ExtResource("1_eo1wb")
 speed_increase_per_sec = 500.0
 explosion = ExtResource("2_qiaje")
-explosion_damage_per_second = 130.0
+explosion_damage_per_second = 100.0
 speed = -50
 
 [node name="Visuals" type="Sprite2D" parent="." unique_id=2024728025]

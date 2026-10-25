@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://df5egp5etvi8h"]
 
 [ext_resource type="PackedScene" uid="uid://c0v6l6r5fiqtr" path="res://scenes/friendlies/army_man.tscn" id="1_s6y14"]
-[ext_resource type="PackedScene" uid="uid://buk0topn0a7gu" path="res://scenes/player_rocket.tscn" id="2_cjptc"]
+[ext_resource type="PackedScene" uid="uid://buk0topn0a7gu" path="res://scenes/projectiles/player_rocket.tscn" id="2_cjptc"]
 [ext_resource type="Texture2D" uid="uid://fufdrh0wfohb" path="res://assets/troopers/rocket_launcher.png" id="3_cjptc"]
 
 [node name="RocketLauncherMan" unique_id=365000319 instance=ExtResource("1_s6y14")]

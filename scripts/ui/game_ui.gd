@@ -20,8 +20,8 @@ extends Control
 @onready var wave_cleared_label: Label = $WaveClearedLabel
 @onready var wave_cleared_continue: Button = $WaveClearedLabel/WaveClearedContinue
 @onready var win_label: Label = $WinLabel
-@onready var game_over_label: Label = $GameOverLabel
 @onready var unplaced_troops_notice: Label = $NextWaveButton/UnplacedTroopsNotice
+@onready var game_over_screen: TextureRect = $GameOverScreen
 
 @onready var increase_troops: Button = $TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops
 @onready var troop_increase_price_label: Label = $TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer/TroopIncreasePriceLabel

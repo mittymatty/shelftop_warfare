@@ -151,10 +151,6 @@ nodes_to_flip = [NodePath("../../Visuals")]
 position = Vector2(0, 1)
 shape = SubResource("CapsuleShape2D_d2wvv")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=799997658]
-position = Vector2(0, -70)
-zoom = Vector2(1.75, 1.75)
-
 [node name="Sounds" type="Node2D" parent="." unique_id=1689226807]
 
 [node name="Land" type="AudioStreamPlayer2D" parent="Sounds" unique_id=1104987725]

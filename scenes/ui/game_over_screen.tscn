@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://s58sfxjarahd"]
+
+[ext_resource type="Script" uid="uid://c44ece3yhooam" path="res://scripts/ui/game_over_screen.gd" id="1_bllgf"]
+[ext_resource type="Texture2D" uid="uid://ckydq0xptxarf" path="res://assets/GAME_OVER.jpg" id="1_dnrai"]
+[ext_resource type="AudioStream" uid="uid://byjik68v3qfkq" path="res://audio/comedic_fail.mp3" id="3_xra47"]
+[ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="4_xra47"]
+
+[node name="GameOverScreen" type="Control" unique_id=1567536832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bllgf")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=352168811]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_dnrai")
+
+[node name="Sadhorns" type="AudioStreamPlayer" parent="." unique_id=266991123]
+stream = ExtResource("3_xra47")
+autoplay = true
+
+[node name="Button" type="Button" parent="." unique_id=2140708497]
+visible = false
+layout_mode = 0
+offset_left = 375.0
+offset_top = 519.0
+offset_right = 774.0
+offset_bottom = 577.0
+theme_override_colors/font_color = Color(1, 0.31229547, 0.24802625, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5783682, 0.51682353, 1)
+theme_override_fonts/font = ExtResource("4_xra47")
+theme_override_font_sizes/font_size = 50
+text = "RETURN TO MENU?"
+
+[connection signal="finished" from="Sadhorns" to="." method="_on_sadhorns_finished"]

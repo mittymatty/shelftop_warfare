@@ -34,6 +34,7 @@
 [ext_resource type="PackedScene" uid="uid://dcf2l4o3eptsv" path="res://scenes/waves/wave_18.tscn" id="19_yv0u1"]
 [ext_resource type="PackedScene" uid="uid://oacadfc7ti8o" path="res://scenes/waves/wave_19.tscn" id="20_wltlc"]
 [ext_resource type="PackedScene" uid="uid://et44b36uh3gj" path="res://scenes/waves/wave_20.tscn" id="21_styym"]
+[ext_resource type="Script" uid="uid://bgxv1yu5siyki" path="res://scripts/shake_camera.gd" id="22_15if8"]
 [ext_resource type="Texture2D" uid="uid://cy63j6y3vyw0w" path="res://assets/cardboard Box.png" id="35_tl7to"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
@@ -80,12 +81,20 @@ size = Vector2(60.5, 6)
 script = ExtResource("1_4wfg3")
 waves = Array[PackedScene]([ExtResource("13_k5fq4"), ExtResource("3_cixf6"), ExtResource("4_wlwc7"), ExtResource("5_0wemr"), ExtResource("6_u8wxw"), ExtResource("7_ls8op"), ExtResource("8_qw8ek"), ExtResource("9_08d0o"), ExtResource("10_tl7to"), ExtResource("11_15if8"), ExtResource("12_u3yip"), ExtResource("13_pnsqg"), ExtResource("14_3lri6"), ExtResource("15_7uc5s"), ExtResource("16_3eg4m"), ExtResource("17_boshx"), ExtResource("18_iuwyb"), ExtResource("19_yv0u1"), ExtResource("20_wltlc"), ExtResource("21_styym")])
 
+[node name="ShakeCamera2D" type="Camera2D" parent="." unique_id=1510618668 node_paths=PackedStringArray("target", "target_on_game_over")]
+position = Vector2(444, 239)
+zoom = Vector2(1.75, 1.75)
+script = ExtResource("22_15if8")
+target = NodePath("../player")
+target_on_game_over = NodePath("../Dalla")
+bonus_offset = Vector2(0, -70)
+
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1170981993]
 
 [node name="Game UI" parent="GameUI" unique_id=1426189323 instance=ExtResource("8_xunnl")]
 
 [node name="player" parent="." unique_id=1133307836 instance=ExtResource("1_iw0c1")]
-position = Vector2(299, 206)
+position = Vector2(450, 281)
 
 [node name="Table" type="Sprite2D" parent="." unique_id=579425586]
 z_index = -1
