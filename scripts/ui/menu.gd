@@ -29,6 +29,7 @@ func on_go_back_pressed () -> void:
 	main.show()
 
 func switch_to_scene (scene_to_switch_to: PackedScene) -> void:
+	PlayerStatus.current_wave = 0
 	PlayerStatus.blocks = PlayerStatus.starter_blocks if !scene_to_switch_to == BEDROOM_MONKE else 40
 	PlayerStatus.current_increase_max_troops_cost = PlayerStatus.starter_increase_max_troops_cost
 	
