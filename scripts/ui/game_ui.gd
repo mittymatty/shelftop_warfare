@@ -41,7 +41,6 @@ var previous_blocks_amount: int = PlayerStatus.blocks
 const MUSIC_ON = preload("uid://ban0fcnnufqiy")
 const MUSIC_OFF = preload("uid://bj2qu688sfljb")
 
-const MENU: PackedScene = preload("uid://rsrpe7sqso4h")
 const TROOP_BUTTON: PackedScene = preload("uid://bdmyssrhu4j55")
 var trooper_buttons_at_a_time: int = 3
 
@@ -149,7 +148,7 @@ func on_mute_music_pressed () -> void:
 	mute_music.release_focus()
 
 func on_return_to_main_menu_pressed () -> void:
-	get_tree().change_scene_to_packed(MENU)
+	get_tree().call_deferred("change_scene_to_packed",load("uid://rsrpe7sqso4h"))
 
 func _process(_delta: float) -> void:
 	handle_enemy_count()
