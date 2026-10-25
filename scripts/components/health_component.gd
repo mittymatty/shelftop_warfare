@@ -54,7 +54,7 @@ func take_damage(damage: float, knockback: Vector2, _from: Vector2) -> void:
 	affect_health(-damage)
 	damaged.emit(damage)
 	
-	if regen_delay_timer:
+	if is_instance_valid(regen_delay_timer):
 		regen_delay_timer.start()
 	
 	if "velocity" in body:

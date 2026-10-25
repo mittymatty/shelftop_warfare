@@ -111,6 +111,7 @@ offset_top = -49.0
 offset_right = 43.0
 offset_bottom = -43.0
 always_visible = true
+destroy_on_death = false
 body = NodePath("..")
 
 [node name="HealthComponent" parent="." unique_id=1130167078 node_paths=PackedStringArray("body") instance=ExtResource("4_lqnnu")]

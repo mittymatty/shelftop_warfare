@@ -14,7 +14,8 @@ class_name Player extends CharacterBody2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 func on_died () -> void:
-	queue_free()
+	SignalBus.emit_game_over()
+	get_tree().change_scene_to_packed(load("uid://dk3gcosmhllm2")) # Death screen
 
 func on_gun_fired () -> void:
 	velocity += Vector2.from_angle(gun.global_rotation) * -100

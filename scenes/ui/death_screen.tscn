@@ -1,0 +1,68 @@
+[gd_scene format=3 uid="uid://dk3gcosmhllm2"]
+
+[ext_resource type="Script" uid="uid://c44ece3yhooam" path="res://scripts/ui/game_over_screen.gd" id="1_ascqi"]
+[ext_resource type="Texture2D" uid="uid://ckydq0xptxarf" path="res://assets/GAME_OVER.jpg" id="2_oad3j"]
+[ext_resource type="AudioStream" uid="uid://byjik68v3qfkq" path="res://audio/comedic_fail.mp3" id="3_sfg43"]
+[ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="4_0863s"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
+font = ExtResource("4_0863s")
+font_size = 40
+font_color = Color(1, 0.19215687, 0.20784314, 1)
+outline_size = 5
+outline_color = Color(1, 0.19215687, 0.19215687, 1)
+
+[node name="DeathScreen" type="Control" unique_id=1567536832]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ascqi")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=352168811]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_oad3j")
+
+[node name="Sadhorns" type="AudioStreamPlayer" parent="." unique_id=266991123]
+stream = ExtResource("3_sfg43")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=399814738]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 425.0
+offset_right = 1068.0
+offset_bottom = 483.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1515770625]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 424.0
+offset_right = 778.0
+offset_bottom = 503.0
+text = "YOU DIED..."
+label_settings = SubResource("LabelSettings_xrivr")
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=2140708497]
+visible = false
+layout_mode = 0
+offset_left = 375.0
+offset_top = 519.0
+offset_right = 774.0
+offset_bottom = 577.0
+theme_override_colors/font_color = Color(1, 0.31229547, 0.24802625, 1)
+theme_override_colors/font_hover_color = Color(1, 0.5783682, 0.51682353, 1)
+theme_override_fonts/font = ExtResource("4_0863s")
+theme_override_font_sizes/font_size = 50
+text = "RETURN TO MENU?"
+
+[connection signal="finished" from="Sadhorns" to="." method="_on_sadhorns_finished"]
