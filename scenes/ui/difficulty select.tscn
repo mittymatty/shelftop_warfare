@@ -1,14 +1,15 @@
 [gd_scene format=3 uid="uid://dol1pryljmtjc"]
 
-[ext_resource type="Shader" uid="uid://cv4hcn5kggcxk" path="res://scripts/menu.gdshader" id="1_s6yae"]
+[ext_resource type="Shader" uid="uid://cv4hcn5kggcxk" path="res://scripts/shaders/menu.gdshader" id="1_4skqt"]
 [ext_resource type="Texture2D" uid="uid://bwf2cvuh5n1m2" path="res://assets/soldier backround.png" id="2_qc1o2"]
 [ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="3_2cu4s"]
 [ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://resources/cardboard button.tres" id="4_36kui"]
-[ext_resource type="Script" uid="uid://uwargdxll2jn" path="res://scripts/ui/back_to_menu.gd" id="5_36kui"]
-[ext_resource type="Texture2D" uid="uid://bqxnmhy74ad34" path="res://assets/images (3).jpg" id="6_1lvlj"]
+[ext_resource type="Script" uid="uid://hme6rher1l6o" path="res://scripts/weird stuff idk/easy.gd" id="6_ala7y"]
+[ext_resource type="Texture2D" uid="uid://bqxnmhy74ad34" path="res://assets/monke.jpg" id="7_4skqt"]
+[ext_resource type="Script" uid="uid://dc50dwshqshme" path="res://scripts/weird stuff idk/back_to_menu.gd" id="7_ala7y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2cu4s"]
-shader = ExtResource("1_s6yae")
+shader = ExtResource("1_4skqt")
 
 [node name="Control" type="Control" unique_id=2142196946]
 layout_mode = 3
@@ -37,7 +38,123 @@ offset_right = 1389.0
 offset_bottom = 708.0
 color = Color(0.051970907, 0.05197099, 0.051970936, 0.5764706)
 
-[node name="Button" type="Button" parent="." unique_id=156284418]
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=983705894]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 40
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 40
+theme_override_constants/margin_bottom = 40
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer" unique_id=1055886423]
+layout_mode = 2
+
+[node name="Button2" type="Button" parent="MarginContainer/VBoxContainer" unique_id=999241391]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "easy"
+script = ExtResource("6_ala7y")
+
+[node name="Button3" type="Button" parent="MarginContainer/VBoxContainer" unique_id=263509307]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "medium"
+
+[node name="Button4" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1347543594]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "hard"
+
+[node name="Button5" type="Button" parent="MarginContainer/VBoxContainer" unique_id=1071212082]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_2cu4s")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
+theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
+theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
+theme_override_styles/focus = ExtResource("4_36kui")
+text = "crapload of monkeys"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBoxContainer/Button5" unique_id=743814678]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -223.0
+offset_right = 202.0
+offset_bottom = 223.0
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_4skqt")
+
+[node name="TextureRect2" type="TextureRect" parent="MarginContainer/VBoxContainer/Button5" unique_id=1593058360]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 844.0
+offset_top = -223.0
+offset_right = 1292.0
+offset_bottom = 223.0
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_4skqt")
+
+[node name="GoBack" type="Button" parent="." unique_id=156284418]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -53,14 +170,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2cu4s")
 theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
 theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
 theme_override_styles/focus = ExtResource("4_36kui")
 text = "go back"
-script = ExtResource("5_36kui")
+script = ExtResource("7_ala7y")
 
 [node name="Button2" type="Button" parent="." unique_id=808511696]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -73,13 +197,21 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2cu4s")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
 theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
 theme_override_styles/focus = ExtResource("4_36kui")
 text = "easy"
+script = ExtResource("6_ala7y")
 
 [node name="Button3" type="Button" parent="." unique_id=734450243]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -93,13 +225,20 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2cu4s")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
 theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
 theme_override_styles/focus = ExtResource("4_36kui")
 text = "medium"
 
 [node name="Button4" type="Button" parent="." unique_id=619689784]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -113,13 +252,20 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2cu4s")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
 theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
 theme_override_styles/focus = ExtResource("4_36kui")
 text = "hard"
 
 [node name="Button5" type="Button" parent="." unique_id=274569626]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -133,20 +279,30 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_2cu4s")
 theme_override_font_sizes/font_size = 100
 theme_override_styles/normal = ExtResource("4_36kui")
+theme_override_styles/normal_mirrored = ExtResource("4_36kui")
 theme_override_styles/pressed = ExtResource("4_36kui")
+theme_override_styles/pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/hover = ExtResource("4_36kui")
+theme_override_styles/hover_mirrored = ExtResource("4_36kui")
+theme_override_styles/hover_pressed = ExtResource("4_36kui")
+theme_override_styles/hover_pressed_mirrored = ExtResource("4_36kui")
 theme_override_styles/disabled = ExtResource("4_36kui")
+theme_override_styles/disabled_mirrored = ExtResource("4_36kui")
 theme_override_styles/focus = ExtResource("4_36kui")
 text = "crapload of monkeys"
 
 [node name="Images(3)2" type="Sprite2D" parent="." unique_id=1469662671]
+visible = false
 position = Vector2(52.000122, 471)
 scale = Vector2(0.13247249, 0.13882054)
-texture = ExtResource("6_1lvlj")
+texture = ExtResource("7_4skqt")
 
 [node name="Images(3)" type="Sprite2D" parent="." unique_id=2102419006]
+visible = false
 position = Vector2(1083, 466.99997)
 scale = Vector2(0.12892379, 0.1289238)
-texture = ExtResource("6_1lvlj")
+texture = ExtResource("7_4skqt")
 
-[connection signal="pressed" from="Button" to="Button" method="_on_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Button2" to="MarginContainer/VBoxContainer/Button2" method="_on_pressed"]
+[connection signal="pressed" from="GoBack" to="GoBack" method="_on_pressed"]
+[connection signal="pressed" from="Button2" to="Button2" method="_on_pressed"]

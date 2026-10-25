@@ -30,6 +30,7 @@ window/stretch/aspect="expand"
 
 folder_colors={
 "res://assets/": "purple",
+"res://audio/": "pink",
 "res://resources/": "red",
 "res://scenes/": "teal",
 "res://scripts/": "orange"

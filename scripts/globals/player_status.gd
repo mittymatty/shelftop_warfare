@@ -4,7 +4,7 @@ enum GAME_STATUS {WAVE,PEACE,OVER}
 var current_click_mode: CLICK_MODE = CLICK_MODE.PLACE
 var current_game_status: GAME_STATUS = GAME_STATUS.PEACE
 
-var blocks: int = 40 # Starting value
+var blocks: int = 4 # Starting value
 var max_troops_active: int = 5
 var stored_troops: Array[PackedScene] = []
 

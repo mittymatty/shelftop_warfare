@@ -3,4 +3,4 @@ extends Button
 
 
 func _on_pressed() -> void:
-	get_tree() .change_scene_to_file("res://difficulty select.tscn")
+	get_tree().change_scene_to_file("uid://c1g1qq3bfvouo")
