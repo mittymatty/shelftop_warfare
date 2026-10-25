@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dutdi2krcjs1u"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_aloua"]
+[ext_resource type="PackedScene" uid="uid://l67h7jwewftp" path="res://scenes/enemies/shooting_enemy.tscn" id="2_h6wsr"]
+[ext_resource type="PackedScene" uid="uid://cxudomp38mtv7" path="res://scenes/enemies/monkey_barrel.tscn" id="3_0n0xr"]
+[ext_resource type="PackedScene" uid="uid://b3anqa6k5sx3w" path="res://scenes/enemies/dinosaur.tscn" id="4_eyapv"]
+
+[node name="Wave30" type="Node2D" unique_id=2056536713]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_aloua")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_h6wsr"), ExtResource("3_0n0xr"), ExtResource("3_0n0xr"), ExtResource("4_eyapv"), ExtResource("4_eyapv"), null])
+
+[node name="EnemySpawner2" parent="." unique_id=323268615 instance=ExtResource("1_aloua")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_h6wsr"), ExtResource("3_0n0xr"), ExtResource("3_0n0xr"), ExtResource("4_eyapv"), ExtResource("4_eyapv"), null])
+
+[node name="EnemySpawner3" parent="." unique_id=1993743194 instance=ExtResource("1_aloua")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_h6wsr"), ExtResource("3_0n0xr"), ExtResource("3_0n0xr"), ExtResource("4_eyapv"), ExtResource("4_eyapv"), null])
+
+[node name="EnemySpawner4" parent="." unique_id=1808723026 instance=ExtResource("1_aloua")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_h6wsr"), ExtResource("3_0n0xr"), ExtResource("3_0n0xr"), ExtResource("4_eyapv"), ExtResource("4_eyapv"), null])

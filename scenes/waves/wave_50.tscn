@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cycvex50leeg4"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_l5xih"]
+[ext_resource type="PackedScene" uid="uid://c81tenh12vsq8" path="res://scenes/enemies/ted.tscn" id="2_b60bh"]
+
+[node name="Wave50" type="Node2D" unique_id=1819440304]
+
+[node name="EnemySpawner3" parent="." unique_id=904174963 instance=ExtResource("1_l5xih")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_b60bh")])

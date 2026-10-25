@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cn3buiqujacas"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_r7dcv"]
+[ext_resource type="PackedScene" uid="uid://6g6u2vp8pp55" path="res://scenes/enemies/speedy_enemy.tscn" id="2_akwae"]
+
+[node name="Wave47" type="Node2D" unique_id=1033330796]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_r7dcv")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner2" parent="." unique_id=1895229419 instance=ExtResource("1_r7dcv")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner3" parent="." unique_id=925230012 instance=ExtResource("1_r7dcv")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner4" parent="." unique_id=421137337 instance=ExtResource("1_r7dcv")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner5" parent="." unique_id=764361009 instance=ExtResource("1_r7dcv")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner6" parent="." unique_id=2100154610 instance=ExtResource("1_r7dcv")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner7" parent="." unique_id=1611298719 instance=ExtResource("1_r7dcv")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])
+
+[node name="EnemySpawner8" parent="." unique_id=51741329 instance=ExtResource("1_r7dcv")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae"), ExtResource("2_akwae")])

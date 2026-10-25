@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://d3haupfiwmdfp"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_kkggy"]
+[ext_resource type="PackedScene" uid="uid://b1t4cjrre6b5c" path="res://scenes/enemies/bad_guy.tscn" id="2_1k2wp"]
+
+[node name="Wave40" type="Node2D" unique_id=1925546179]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_kkggy")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_1k2wp")])

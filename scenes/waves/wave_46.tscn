@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://btc1lyjgyic76"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_slbfj"]
+[ext_resource type="PackedScene" uid="uid://d3pfu4e8n140l" path="res://scenes/enemies/mega_monkey_barrel.tscn" id="2_54hl6"]
+
+[node name="Wave46" type="Node2D" unique_id=1245619057]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_slbfj")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner2" parent="." unique_id=863984860 instance=ExtResource("1_slbfj")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner3" parent="." unique_id=1909830 instance=ExtResource("1_slbfj")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner4" parent="." unique_id=81930748 instance=ExtResource("1_slbfj")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner5" parent="." unique_id=707329977 instance=ExtResource("1_slbfj")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner6" parent="." unique_id=1106159709 instance=ExtResource("1_slbfj")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner7" parent="." unique_id=327028105 instance=ExtResource("1_slbfj")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])
+
+[node name="EnemySpawner8" parent="." unique_id=1587548909 instance=ExtResource("1_slbfj")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_54hl6")])

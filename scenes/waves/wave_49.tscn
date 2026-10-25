@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://fu3fxct50r60"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_apaoc"]
+[ext_resource type="PackedScene" uid="uid://b1t4cjrre6b5c" path="res://scenes/enemies/bad_guy.tscn" id="2_o6ka8"]
+
+[node name="Wave49" type="Node2D" unique_id=1914203036]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_apaoc")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_o6ka8"), ExtResource("2_o6ka8")])
+
+[node name="EnemySpawner2" parent="." unique_id=519402535 instance=ExtResource("1_apaoc")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_o6ka8"), ExtResource("2_o6ka8")])

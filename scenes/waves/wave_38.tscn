@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://pjcarjuu00m"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_ir5x4"]
+[ext_resource type="PackedScene" uid="uid://42xxk58b8nsf" path="res://scenes/enemies/shotgun_enemy.tscn" id="2_tlrdg"]
+[ext_resource type="PackedScene" uid="uid://6g6u2vp8pp55" path="res://scenes/enemies/speedy_enemy.tscn" id="3_w8kfm"]
+
+[node name="Wave38" type="Node2D" unique_id=1010606350]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_ir5x4")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_tlrdg"), ExtResource("2_tlrdg"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm")])
+
+[node name="EnemySpawner2" parent="." unique_id=1862188816 instance=ExtResource("1_ir5x4")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_tlrdg"), ExtResource("2_tlrdg"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm")])
+
+[node name="EnemySpawner3" parent="." unique_id=1983223918 instance=ExtResource("1_ir5x4")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_tlrdg"), ExtResource("2_tlrdg"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm")])
+
+[node name="EnemySpawner4" parent="." unique_id=1032536651 instance=ExtResource("1_ir5x4")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_tlrdg"), ExtResource("2_tlrdg"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm")])
+
+[node name="EnemySpawner5" parent="." unique_id=304543431 instance=ExtResource("1_ir5x4")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_tlrdg"), ExtResource("2_tlrdg"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm")])
+
+[node name="EnemySpawner6" parent="." unique_id=1781215993 instance=ExtResource("1_ir5x4")]
+position = Vector2(1619, 338)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_tlrdg"), ExtResource("2_tlrdg"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm"), ExtResource("3_w8kfm")])

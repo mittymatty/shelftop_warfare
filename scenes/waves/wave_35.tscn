@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://c5illkh4rkmqw"]
+
+[ext_resource type="PackedScene" uid="uid://0cnw5elr0knt" path="res://scenes/enemies/enemy_spawner.tscn" id="1_jnm8k"]
+[ext_resource type="PackedScene" uid="uid://d3pfu4e8n140l" path="res://scenes/enemies/mega_monkey_barrel.tscn" id="2_skqjc"]
+
+[node name="Wave35" type="Node2D" unique_id=303904234]
+
+[node name="EnemySpawner" parent="." unique_id=904174963 instance=ExtResource("1_jnm8k")]
+position = Vector2(-572, 358)
+enemies_left_to_spawn = Array[PackedScene]([ExtResource("2_skqjc")])
