@@ -4,16 +4,18 @@ enum GAME_STATUS {WAVE,PEACE,OVER}
 var current_click_mode: CLICK_MODE = CLICK_MODE.PLACE
 var current_game_status: GAME_STATUS = GAME_STATUS.PEACE
 
+var starter_blocks: int = 4
 var blocks: int = 4 # Starting value
 var max_troops_active: int = 5
 var stored_troops: Array[PackedScene] = []
 
+
+var starter_increase_max_troops_cost: int = 5
 var current_increase_max_troops_cost: int = 5
 var increase_max_troops_cost_cost_increase: int = 2
 
-var base_refresh_cost: int = 2
+var base_refresh_cost: int = 1
 var current_refresh_cost: int = 2
-var has_used_free_refresh: int = false
 
 var current_wave: int = 0
 var active_troops: int = 0
