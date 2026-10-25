@@ -39,4 +39,6 @@ func on_setup_wave () -> void:
 		make_wave()
 
 func _ready() -> void:
+	for enemy: Enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.on_died()
 	SignalBus.setup_wave.connect(on_setup_wave)
