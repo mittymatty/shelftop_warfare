@@ -171,7 +171,7 @@ func _ready() -> void:
 	next_wave_button.pressed.connect(on_next_wave_button_pressed)
 	increase_troops.pressed.connect(on_increase_troops_pressed)
 	mute_music.pressed.connect(on_mute_music_pressed)
-	return_to_menu_button.pressed.connect()
+	return_to_menu_button.pressed.connect(on_return_to_main_menu_pressed)
 	
 	SignalBus.blocks_changed.connect(on_blocks_changed)
 	SignalBus.game_won.connect(on_game_won)
