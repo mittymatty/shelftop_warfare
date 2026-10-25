@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://dmub533afkgh4"]
+
+[ext_resource type="PackedScene" uid="uid://bf4vnim2gj71w" path="res://scenes/waves/monke_wave.tscn" id="2_nc7c3"]
+
+[node name="Bedroom" unique_id=602288621]
+waves = Array[PackedScene]([ExtResource("2_nc7c3")])
+
+[node name="YellowTint" parent="." index="10" unique_id=1209719788]
+color = Color(0.8522133, 0.96741027, 0.88982064, 1)

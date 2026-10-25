@@ -61,6 +61,14 @@ offset_bottom = 945.0
 texture = ExtResource("4_e11en")
 stretch_mode = 5
 
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1315126094]
+layout_mode = 0
+offset_left = -498.0
+offset_top = -99.0
+offset_right = 1614.0
+offset_bottom = 712.0
+color = Color(0, 0, 0, 0.18039216)
+
 [node name="Main" type="Control" parent="." unique_id=1749808119]
 visible = false
 layout_mode = 1
