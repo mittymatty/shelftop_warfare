@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://fufdrh0wfohb"
-path="res://.godot/imported/rocket_launcher.png-8867d01fceda27d646cb00ba4dcd9ee1.ctex"
+uid="uid://da8yohu5i4tk8"
+path="res://.godot/imported/toy_soldier.png-f13d82baf2ee1a91df8705ae7661c74e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/rocket_launcher.png"
-dest_files=["res://.godot/imported/rocket_launcher.png-8867d01fceda27d646cb00ba4dcd9ee1.ctex"]
+source_file="res://assets/troopers/toy_soldier.png"
+dest_files=["res://.godot/imported/toy_soldier.png-f13d82baf2ee1a91df8705ae7661c74e.ctex"]
 
 [params]
 

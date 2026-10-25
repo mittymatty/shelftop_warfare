@@ -1,0 +1,92 @@
+[gd_scene format=3 uid="uid://b1t4cjrre6b5c"]
+
+[ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_ifl3r"]
+[ext_resource type="Script" uid="uid://uvi71d7gnkrp" path="res://scripts/enemies/bad_guy.gd" id="2_snyr1"]
+[ext_resource type="Texture2D" uid="uid://da82npmrjgk1c" path="res://assets/enemies/bad_guy.png" id="2_srbto"]
+[ext_resource type="PackedScene" uid="uid://cy5ppw87jnmn8" path="res://scenes/components/gun_component.tscn" id="3_snyr1"]
+[ext_resource type="PackedScene" uid="uid://ygux51qhvuoa" path="res://scenes/components/touch_damager_component.tscn" id="4_myjbl"]
+[ext_resource type="PackedScene" uid="uid://btjm0vro7qymf" path="res://scenes/projectiles/bad_guy_laser.tscn" id="5_kfkqv"]
+[ext_resource type="PackedScene" uid="uid://ckbwe46oi0hce" path="res://scenes/ui/reload_bar.tscn" id="7_s57ac"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hy6xw"]
+radius = 16.0
+height = 100.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_kfkqv"]
+radius = 25.0
+height = 86.0
+
+[node name="BadGuy" unique_id=733239099 node_paths=PackedStringArray("gun_component", "touch_damager_component") instance=ExtResource("1_ifl3r")]
+script = ExtResource("2_snyr1")
+gun_component = NodePath("Components/GunComponent")
+touch_damager_component = NodePath("Components/TouchDamagerComponent")
+
+[node name="BadGuy" type="Sprite2D" parent="Visuals" parent_id_path=PackedInt32Array(434325312) index="0" unique_id=1672013521]
+position = Vector2(0.5, 0)
+scale = Vector2(2, 2)
+texture = ExtResource("2_srbto")
+
+[node name="InvisGun" type="Sprite2D" parent="Visuals" parent_id_path=PackedInt32Array(434325312) index="1" unique_id=624681227]
+position = Vector2(0, -15)
+
+[node name="Muzzle" type="Marker2D" parent="Visuals/InvisGun" index="0" unique_id=1157663978]
+
+[node name="AttackSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(947285440) index="0" unique_id=1798149007]
+
+[node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="0" unique_id=1130167078]
+max_health = 750.0
+
+[node name="MovementComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="1" unique_id=275666189]
+speed = 35.0
+
+[node name="TrackerComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="2" unique_id=1220211303]
+stop_tracking_distance = 100.0
+
+[node name="GunComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="7" unique_id=769225365 node_paths=PackedStringArray("gun_visuals", "muzzle") instance=ExtResource("3_snyr1")]
+bullet = ExtResource("5_kfkqv")
+gun_visuals = NodePath("../../Visuals/InvisGun")
+muzzle = NodePath("../../Visuals/InvisGun/Muzzle")
+
+[node name="CooldownTimer" parent="Components/GunComponent" index="0" unique_id=406347045]
+wait_time = 0.009999999999999998
+
+[node name="TouchDamagerComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="8" unique_id=934853369 node_paths=PackedStringArray("hazard_owner", "attack_box") instance=ExtResource("4_myjbl")]
+damage = 50.0
+knockback = Vector2(500, -50)
+hazard_owner = NodePath("../..")
+attack_box = NodePath("../../TouchDamager")
+
+[node name="CooldownTimer" parent="Components/TouchDamagerComponent" index="0" unique_id=1788332149]
+wait_time = 1.0
+
+[node name="HealthBar" parent="." index="3" unique_id=1492475502]
+offset_left = -23.0
+offset_top = -59.0
+offset_right = 23.0
+offset_bottom = -55.0
+
+[node name="ReloadBar" parent="." index="4" unique_id=1286998321 node_paths=PackedStringArray("gun_component") instance=ExtResource("7_s57ac")]
+visible = true
+offset_left = -23.0
+offset_top = -52.0
+offset_right = 23.0
+offset_bottom = -48.0
+gun_component = NodePath("../Components/GunComponent")
+
+[node name="Collision" parent="." index="5" unique_id=1302760824]
+position = Vector2(0, 10)
+shape = SubResource("CapsuleShape2D_hy6xw")
+
+[node name="JumpTrigger" parent="Raycasts" parent_id_path=PackedInt32Array(840407662) index="0" unique_id=1431579325]
+position = Vector2(0, 15)
+
+[node name="TouchDamager" type="Area2D" parent="." index="8" unique_id=389449599]
+collision_layer = 0
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchDamager" index="0" unique_id=2034942426]
+position = Vector2(0, 12)
+shape = SubResource("CapsuleShape2D_kfkqv")
+
+[editable path="Components/GunComponent"]
+[editable path="Components/TouchDamagerComponent"]

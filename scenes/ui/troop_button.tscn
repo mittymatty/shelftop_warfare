@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://oks2sxp1t45s" path="res://assets/ui/box_9patch.png" id="1_6e811"]
 [ext_resource type="Texture2D" uid="uid://l2qod4amlhie" path="res://assets/ui/box_9patch_click.png" id="2_6e811"]
-[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/front soldier.png" id="2_h40kk"]
+[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/troopers/front soldier.png" id="2_h40kk"]
 [ext_resource type="Texture2D" uid="uid://deojfiamdref8" path="res://assets/ui/box_9patch_hover.png" id="3_27umi"]
 [ext_resource type="Script" uid="uid://cik0m5uqd5ohf" path="res://scripts/troop_button.gd" id="4_tf3mv"]
 [ext_resource type="Texture2D" uid="uid://c3yc434c1kxo8" path="res://assets/ui/blocks.png" id="5_wvsrj"]

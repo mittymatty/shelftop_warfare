@@ -10,7 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://ba8a4wcdcst1w" path="res://assets/parachute.png" id="7_xefxo"]
 [ext_resource type="PackedScene" uid="uid://cjro72gvhep3e" path="res://scenes/components/health_component.tscn" id="8_6jgr1"]
 [ext_resource type="Texture2D" uid="uid://c4v42k0h04cyx" path="res://assets/pistol.png" id="8_xefxo"]
-[ext_resource type="Texture2D" uid="uid://gatfbwy2d0ov" path="res://assets/saluting_soldier.png" id="10_6jgr1"]
+[ext_resource type="Texture2D" uid="uid://gatfbwy2d0ov" path="res://assets/troopers/saluting_soldier.png" id="10_6jgr1"]
 [ext_resource type="PackedScene" uid="uid://ckbwe46oi0hce" path="res://scenes/ui/reload_bar.tscn" id="11_rjri2"]
 [ext_resource type="PackedScene" uid="uid://cxycyknysydd1" path="res://scenes/ui/health_bar.tscn" id="13_qxc4t"]
 

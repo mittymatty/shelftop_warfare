@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bs0ct6yaotpup" path="res://scripts/enemies/shooting_enemy.gd" id="1_bghml"]
 [ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_dhunw"]
 [ext_resource type="Texture2D" uid="uid://c4v42k0h04cyx" path="res://assets/pistol.png" id="3_rj5pj"]
-[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/front soldier.png" id="3_wymo3"]
+[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/troopers/front soldier.png" id="3_wymo3"]
 [ext_resource type="PackedScene" uid="uid://cy5ppw87jnmn8" path="res://scenes/components/gun_component.tscn" id="4_wymo3"]
 [ext_resource type="PackedScene" uid="uid://cxny1k133xbwk" path="res://scenes/projectiles/enemy_bullet.tscn" id="5_itbqu"]
 [ext_resource type="PackedScene" uid="uid://ckbwe46oi0hce" path="res://scenes/ui/reload_bar.tscn" id="7_rj5pj"]

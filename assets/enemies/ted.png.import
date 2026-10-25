@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gatfbwy2d0ov"
-path="res://.godot/imported/saluting_soldier.png-f21dd7a87cafafca1860a98cffa0cdc5.ctex"
+uid="uid://dhiaysq70xswo"
+path="res://.godot/imported/ted.png-9b56601b7e808dd0ce1d5ecc25249ff6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/saluting_soldier.png"
-dest_files=["res://.godot/imported/saluting_soldier.png-f21dd7a87cafafca1860a98cffa0cdc5.ctex"]
+source_file="res://assets/enemies/ted.png"
+dest_files=["res://.godot/imported/ted.png-9b56601b7e808dd0ce1d5ecc25249ff6.ctex"]
 
 [params]
 

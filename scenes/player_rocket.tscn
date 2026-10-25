@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c6rhwwb8ycbst" path="res://scripts/player_rocket.gd" id="1_eo1wb"]
 [ext_resource type="PackedScene" uid="uid://ch62m4udw7yca" path="res://scenes/projectiles/player_explosion.tscn" id="2_qiaje"]
-[ext_resource type="Texture2D" uid="uid://b2os44y1lremm" path="res://assets/rocket.png" id="3_qiaje"]
+[ext_resource type="Texture2D" uid="uid://b2os44y1lremm" path="res://assets/troopers/rocket.png" id="3_qiaje"]
 [ext_resource type="Texture2D" uid="uid://llcboxxeeyw" path="res://assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_xxqir"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eo1wb"]

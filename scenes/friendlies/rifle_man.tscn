@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhv5cygketwim"]
 
 [ext_resource type="PackedScene" uid="uid://c0v6l6r5fiqtr" path="res://scenes/friendlies/army_man.tscn" id="1_bv14e"]
-[ext_resource type="Texture2D" uid="uid://14o852vqmhpb" path="res://assets/gun.png" id="2_78565"]
+[ext_resource type="Texture2D" uid="uid://14o852vqmhpb" path="res://assets/troopers/gun.png" id="2_78565"]
 
 [node name="RifleMan" unique_id=365000319 instance=ExtResource("1_bv14e")]
 

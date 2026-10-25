@@ -7,13 +7,14 @@
 [ext_resource type="PackedScene" uid="uid://bdmyssrhu4j55" path="res://scenes/ui/troop_button.tscn" id="4_fct72"]
 [ext_resource type="Texture2D" uid="uid://c3yc434c1kxo8" path="res://assets/ui/blocks.png" id="4_qrkc0"]
 [ext_resource type="Texture2D" uid="uid://oks2sxp1t45s" path="res://assets/ui/box_9patch.png" id="4_ru5ln"]
+[ext_resource type="Script" uid="uid://bp1fso13ieon3" path="res://scripts/ui/health_bar.gd" id="5_aq72h"]
 [ext_resource type="FontFile" uid="uid://dn1dl7h18dgue" path="res://assets/fonts/YOSIA-SCRIBBLE.ttf" id="6_opxtl"]
-[ext_resource type="Texture2D" uid="uid://gatfbwy2d0ov" path="res://assets/saluting_soldier.png" id="6_v1bdg"]
+[ext_resource type="Texture2D" uid="uid://gatfbwy2d0ov" path="res://assets/troopers/saluting_soldier.png" id="6_v1bdg"]
 [ext_resource type="Resource" uid="uid://cnhk32lv3frjh" path="res://resources/pistol_trooper.tres" id="7_yvtb5"]
 [ext_resource type="Resource" uid="uid://bl28phk4lorh7" path="res://resources/shotgun_trooper.tres" id="8_k7elv"]
 [ext_resource type="Resource" uid="uid://ca6egkjw3vm77" path="res://resources/rifle_trooper.tres" id="9_fftnl"]
 [ext_resource type="Texture2D" uid="uid://c43h40g73nxtn" path="res://assets/enemies/monkey.png" id="10_bxde6"]
-[ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/toy_soldier.png" id="14_x0n6o"]
+[ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/troopers/toy_soldier.png" id="14_x0n6o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u001w"]
 font = ExtResource("2_bma8u")
@@ -110,6 +111,7 @@ size_flags_horizontal = 0
 [node name="HealthBar" parent="Vitals/Left" unique_id=1492475502 instance=ExtResource("2_u001w")]
 custom_minimum_size = Vector2(150, 20)
 layout_mode = 2
+script = ExtResource("5_aq72h")
 always_visible = true
 
 [node name="Middle" type="HBoxContainer" parent="Vitals" unique_id=460445105]
@@ -149,6 +151,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TroopSelect" type="MarginContainer" parent="." unique_id=1224922898]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

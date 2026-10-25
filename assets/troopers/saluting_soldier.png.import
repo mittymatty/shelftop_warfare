@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bmqo20odvdxqp"
-path="res://.godot/imported/shotgun.png-ef857ec377561f5f48239e4510a4b4b4.ctex"
+uid="uid://gatfbwy2d0ov"
+path="res://.godot/imported/saluting_soldier.png-9a224574c476131b0c076890018b4483.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/shotgun.png"
-dest_files=["res://.godot/imported/shotgun.png-ef857ec377561f5f48239e4510a4b4b4.ctex"]
+source_file="res://assets/troopers/saluting_soldier.png"
+dest_files=["res://.godot/imported/saluting_soldier.png-9a224574c476131b0c076890018b4483.ctex"]
 
 [params]
 

@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://dlvawo4t42v30"]
 
 [ext_resource type="Script" uid="uid://cldgyl7sb7pnn" path="res://scripts/player.gd" id="1_g2els"]
-[ext_resource type="Texture2D" uid="uid://14o852vqmhpb" path="res://assets/gun.png" id="2_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://14o852vqmhpb" path="res://assets/troopers/gun.png" id="2_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://cxhd6lpl2fr3x" path="res://scenes/friendlies/placement_cursor.tscn" id="2_jej6c"]
-[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/front soldier.png" id="3_d2wvv"]
+[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/troopers/front soldier.png" id="3_d2wvv"]
 [ext_resource type="PackedScene" uid="uid://ba7t6qyncp8sv" path="res://scenes/components/advanced_jump_component.tscn" id="3_qlg0r"]
 [ext_resource type="PackedScene" uid="uid://cy1034rgijxmi" path="res://scenes/components/movement_component.tscn" id="4_tuyoq"]
 [ext_resource type="PackedScene" uid="uid://bmfvsuo8g21cg" path="res://scenes/components/input_component.tscn" id="5_fjrip"]

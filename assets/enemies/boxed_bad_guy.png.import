@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhjnb13rjaubk"
-path="res://.godot/imported/yellow_ball.png-e653c063f10024a61606997abcb5df5f.ctex"
+uid="uid://cpgi63r2gramn"
+path="res://.godot/imported/boxed_bad_guy.png-2bdce96eacf87f1e990a67ab5b3a71f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/yellow_ball.png"
-dest_files=["res://.godot/imported/yellow_ball.png-e653c063f10024a61606997abcb5df5f.ctex"]
+source_file="res://assets/enemies/boxed_bad_guy.png"
+dest_files=["res://.godot/imported/boxed_bad_guy.png-2bdce96eacf87f1e990a67ab5b3a71f1.ctex"]
 
 [params]
 

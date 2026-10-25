@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dhvuhdfdvg04k"]
 
 [ext_resource type="PackedScene" uid="uid://c0v6l6r5fiqtr" path="res://scenes/friendlies/army_man.tscn" id="1_qjhh0"]
-[ext_resource type="Texture2D" uid="uid://bmqo20odvdxqp" path="res://assets/shotgun.png" id="2_ho533"]
+[ext_resource type="Texture2D" uid="uid://bmqo20odvdxqp" path="res://assets/troopers/shotgun.png" id="2_ho533"]
 
 [node name="ShotgunArmyMan" unique_id=365000319 instance=ExtResource("1_qjhh0")]
 

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://btjm0vro7qymf"]
+
+[ext_resource type="Texture2D" uid="uid://celx7rp3uj36i" path="res://assets/laser.png" id="1_m556u"]
+[ext_resource type="Script" uid="uid://ca7xqcpviq8o1" path="res://scripts/bullet.gd" id="1_wufjr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wufjr"]
+radius = 5.0
+height = 22.0
+
+[node name="BadGuyLaser" type="Area2D" unique_id=1806659163]
+collision_layer = 16
+collision_mask = 67
+script = ExtResource("1_wufjr")
+
+[node name="Visuals" type="Sprite2D" parent="." unique_id=562830614]
+modulate = Color(0.7520863, 0.11607828, 0, 1)
+position = Vector2(-4.0000005, 2)
+rotation = 0.008984804
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_m556u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1385000471]
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_wufjr")
+
+[node name="LifeTimer" type="Timer" parent="." unique_id=501460206]
+wait_time = 3.0
+one_shot = true
+autostart = true

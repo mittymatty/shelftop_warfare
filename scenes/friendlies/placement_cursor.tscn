@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://cxhd6lpl2fr3x"]
 
-[ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/toy_soldier.png" id="1_7jjua"]
+[ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/troopers/toy_soldier.png" id="1_7jjua"]
 [ext_resource type="Script" uid="uid://cky2snomvdd6e" path="res://scripts/placement_cursor.gd" id="1_ai2in"]
-[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/front soldier.png" id="2_ai2in"]
+[ext_resource type="Texture2D" uid="uid://isi48lc8g4ou" path="res://assets/troopers/front soldier.png" id="2_ai2in"]
 [ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="4_ihoqm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]

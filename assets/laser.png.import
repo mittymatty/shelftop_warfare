@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://isi48lc8g4ou"
-path="res://.godot/imported/front soldier.png-f180ced0a8f3f992e010d6ef9c34f9ac.ctex"
+uid="uid://celx7rp3uj36i"
+path="res://.godot/imported/laser.png-af9ca9427a51d96a36a733a4aa4be8b2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/front soldier.png"
-dest_files=["res://.godot/imported/front soldier.png-f180ced0a8f3f992e010d6ef9c34f9ac.ctex"]
+source_file="res://assets/laser.png"
+dest_files=["res://.godot/imported/laser.png-af9ca9427a51d96a36a733a4aa4be8b2.ctex"]
 
 [params]
 
