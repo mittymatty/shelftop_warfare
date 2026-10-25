@@ -13,8 +13,8 @@
 [ext_resource type="Resource" uid="uid://bl28phk4lorh7" path="res://resources/shotgun_trooper.tres" id="8_k7elv"]
 [ext_resource type="Resource" uid="uid://ca6egkjw3vm77" path="res://resources/rifle_trooper.tres" id="9_fftnl"]
 [ext_resource type="Texture2D" uid="uid://c43h40g73nxtn" path="res://assets/enemies/monkey.png" id="10_bxde6"]
-[ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/troopers/toy_soldier.png" id="14_x0n6o"]
 [ext_resource type="Texture2D" uid="uid://cba51mig1rfsn" path="res://assets/ui/Red Block.png" id="15_aq72h"]
+[ext_resource type="Texture2D" uid="uid://ban0fcnnufqiy" path="res://assets/ui/music_on.png" id="16_i3ans"]
 [ext_resource type="AudioStream" uid="uid://8f0f05fb576m" path="res://audio/brick_click.ogg" id="16_pbku6"]
 [ext_resource type="AudioStream" uid="uid://86r8kvoaa0af" path="res://audio/brick_drop.ogg" id="17_i3ans"]
 
@@ -50,6 +50,10 @@ font_size = 60
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_opxtl"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crnce"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pbku6"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i3ans"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
 font = ExtResource("2_bma8u")
@@ -190,12 +194,12 @@ scale = Vector2(1.4766667, 1)
 texture = ExtResource("2_crnce")
 
 [node name="ButtonCardboard2" type="Sprite2D" parent="CardboardButtons" unique_id=884438680]
-position = Vector2(1007, 128)
+position = Vector2(1015.00006, 126)
 scale = Vector2(1.8533334, 1)
 texture = ExtResource("2_crnce")
 
 [node name="ButtonCardboard4" type="Sprite2D" parent="CardboardButtons" unique_id=1828805552]
-position = Vector2(1007, 66)
+position = Vector2(1014.00006, 65)
 scale = Vector2(1.4933333, 1)
 texture = ExtResource("2_crnce")
 
@@ -351,48 +355,6 @@ layout_mode = 2
 theme_override_constants/separation = 15
 alignment = 1
 
-[node name="IncreaseTroops" type="Button" parent="TroopSelect/VBoxContainer/HBoxContainer2" unique_id=1592781313]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-theme_override_fonts/font = ExtResource("2_bma8u")
-theme_override_font_sizes/font_size = 40
-text = "+4 Max Troops"
-icon = ExtResource("14_x0n6o")
-
-[node name="HBoxContainer" type="HBoxContainer" parent="TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops" unique_id=455154287]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -102.5
-offset_top = -35.5
-offset_right = 97.5
-offset_bottom = 54.5
-grow_horizontal = 2
-grow_vertical = 0
-alignment = 1
-
-[node name="TextureRect" type="TextureRect" parent="TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer" unique_id=1397437183]
-custom_maximum_size = Vector2(50, 50)
-layout_mode = 2
-offset_transform_enabled = true
-offset_transform_position = Vector2(0, 10)
-texture = ExtResource("4_qrkc0")
-expand_mode = 2
-
-[node name="TroopIncreasePriceLabel" type="Label" parent="TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer" unique_id=1025479501]
-layout_mode = 2
-size_flags_horizontal = 4
-offset_transform_enabled = true
-theme_override_font_sizes/font_size = 90
-text = "5"
-label_settings = SubResource("LabelSettings_opxtl")
-horizontal_alignment = 1
-vertical_alignment = 1
-
 [node name="HBoxContainer" type="HBoxContainer" parent="TroopSelect/VBoxContainer" unique_id=805179365]
 layout_mode = 2
 theme_override_constants/separation = 15
@@ -454,7 +416,6 @@ modulate = Color(1, 1, 1, 0)
 layout_mode = 2
 
 [node name="WinLabel" type="Label" parent="." unique_id=955396560]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -467,6 +428,34 @@ YOU WIN!"
 label_settings = SubResource("LabelSettings_hy6xw")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="ReturnToMenuButton" type="Button" parent="WinLabel" unique_id=1084427605]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -279.0
+offset_top = 145.0
+offset_right = 280.0
+offset_bottom = 185.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_pressed_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+theme_override_colors/font_hover_color = Color(0.5729881, 0.57298815, 0.5729892, 1)
+theme_override_fonts/font = ExtResource("2_bma8u")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bxde6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_opxtl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
+text = "Return to menu?"
+
+[node name="ButtonCardboard" type="Sprite2D" parent="WinLabel/ReturnToMenuButton" unique_id=1001382049]
+z_index = -1
+position = Vector2(281.00003, 47.000015)
+scale = Vector2(2.693333, 1.2500001)
+texture = ExtResource("2_crnce")
 
 [node name="WaveClearedLabel" type="Label" parent="." unique_id=937198969]
 visible = false
@@ -494,12 +483,64 @@ offset_right = 65.0
 offset_bottom = 63.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_colors/font_pressed_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+theme_override_colors/font_hover_color = Color(0.5729881, 0.57298815, 0.5729892, 1)
 theme_override_fonts/font = ExtResource("2_bma8u")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bxde6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_opxtl")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
-text = "(Click Here to Continue)"
+text = "Continue?"
+
+[node name="IncreaseTroops" type="Button" parent="." unique_id=1175979454]
+layout_mode = 0
+offset_left = 909.0
+offset_top = 138.0
+offset_right = 1119.0
+offset_bottom = 176.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+theme_override_colors/font_pressed_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+theme_override_colors/font_hover_color = Color(0.5729881, 0.57298815, 0.5729892, 1)
+theme_override_fonts/font = ExtResource("2_bma8u")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxEmpty_pbku6")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_i3ans")
+text = "+4 Max Troops"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="IncreaseTroops" unique_id=1748081392]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.5
+offset_top = -35.5
+offset_right = 97.5
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="IncreaseTroops/HBoxContainer" unique_id=337500952]
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 10)
+texture = ExtResource("4_qrkc0")
+expand_mode = 2
+
+[node name="TroopIncreasePriceLabel" type="Label" parent="IncreaseTroops/HBoxContainer" unique_id=2025392936]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 90
+text = "5"
+label_settings = SubResource("LabelSettings_opxtl")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="NextWaveButton" type="Button" parent="." unique_id=1546073703]
 visible = false
@@ -512,12 +553,14 @@ offset_top = 130.0
 offset_right = 280.0
 offset_bottom = 170.0
 grow_horizontal = 2
+theme_override_colors/font_pressed_color = Color(0.6706895, 0.6706895, 0.6706895, 1)
+theme_override_colors/font_hover_color = Color(0.5729881, 0.57298815, 0.5729892, 1)
 theme_override_fonts/font = ExtResource("2_bma8u")
 theme_override_font_sizes/font_size = 40
 theme_override_styles/normal = SubResource("StyleBoxEmpty_bxde6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_opxtl")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
-text = "Click Here to Begin Next Wave"
+text = "Begin Next Wave?"
 
 [node name="UnplacedTroopsNotice" type="Label" parent="NextWaveButton" unique_id=1233350551]
 layout_mode = 1
@@ -532,7 +575,7 @@ offset_right = 175.5
 offset_bottom = 15.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "(Unplaced troops remain in storage)"
+text = "(Any unplaced troops will be stored for later)"
 label_settings = SubResource("LabelSettings_xrivr")
 
 [node name="GameOverScreen" type="TextureRect" parent="." unique_id=899068261]
@@ -568,16 +611,21 @@ offset_right = -6.0
 offset_bottom = 40.0
 texture = ExtResource("15_aq72h")
 
-[node name="MuteAudio" type="TextureButton" parent="." unique_id=1734787337]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-toggle_mode = true
-
 [node name="MuteMusic" type="TextureButton" parent="." unique_id=2067750376]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -100.0
+offset_right = 100.0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+offset_transform_enabled = true
+offset_transform_scale = Vector2(0.5, 0.5)
+shortcut_feedback = false
+shortcut_in_tooltip = false
+texture_normal = ExtResource("16_i3ans")
 
 [node name="BrickClick" type="AudioStreamPlayer" parent="." unique_id=1632625652]
 stream = ExtResource("16_pbku6")

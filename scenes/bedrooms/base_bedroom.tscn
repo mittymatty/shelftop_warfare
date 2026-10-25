@@ -95,7 +95,8 @@ bonus_offset = Vector2(0, -70)
 
 [node name="GameUI" type="CanvasLayer" parent="." unique_id=1170981993]
 
-[node name="Game UI" parent="GameUI" unique_id=1426189323 instance=ExtResource("23_4f41x")]
+[node name="Game UI" parent="GameUI" unique_id=1426189323 node_paths=PackedStringArray("music_to_mute") instance=ExtResource("23_4f41x")]
+music_to_mute = NodePath("../../Music")
 
 [node name="player" parent="." unique_id=1133307836 instance=ExtResource("24_qmveu")]
 position = Vector2(450, 281)

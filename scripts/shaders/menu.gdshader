@@ -1,6 +1,6 @@
 shader_type canvas_item;
 
 void vertex() {
-	UV.x += TIME * .1; 
-	UV.y += TIME * -.1;
+	UV.x += TIME * .025; 
+	UV.y += TIME * -.025;
 }

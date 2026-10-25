@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bjk423qubqs6d" path="res://scripts/ui/menu.gd" id="1_70i5f"]
 [ext_resource type="AudioStream" uid="uid://bv8prpd42vvps" path="res://audio/music/menu_loop.ogg" id="1_mj5lg"]
 [ext_resource type="Shader" uid="uid://cv4hcn5kggcxk" path="res://scripts/shaders/menu.gdshader" id="1_vjb58"]
-[ext_resource type="Texture2D" uid="uid://bwf2cvuh5n1m2" path="res://assets/soldier backround.png" id="2_con2f"]
 [ext_resource type="Texture2D" uid="uid://bd0ltscjwqt51" path="res://assets/title.png" id="3_con2f"]
+[ext_resource type="Texture2D" uid="uid://cghlcyc4pwg4u" path="res://assets/soldier backround - empty back.png" id="4_e11en"]
 [ext_resource type="FontFile" uid="uid://dn1dl7h18dgue" path="res://assets/fonts/YOSIA-SCRIBBLE.ttf" id="4_g3eks"]
 [ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://resources/cardboard button.tres" id="5_v86rl"]
 [ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="6_13sgg"]
@@ -12,6 +12,11 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1vivr"]
 shader = ExtResource("1_vjb58")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hy6xw"]
+font = ExtResource("6_13sgg")
+font_size = 32
+outline_size = 2
 
 [node name="Menu" type="Control" unique_id=138921986]
 layout_mode = 3
@@ -27,6 +32,23 @@ stream = ExtResource("1_mj5lg")
 autoplay = true
 parameters/looping = true
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1685650970]
+layout_mode = 0
+offset_left = -209.0
+offset_top = -67.0
+offset_right = 1389.0
+offset_bottom = 708.0
+color = Color(0.041337542, 0.4965406, 0.5768881, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1516248344]
+layout_mode = 0
+offset_left = -206.00002
+offset_top = 520.0
+offset_right = 1392.0
+offset_bottom = 1021.56726
+rotation = -0.17712326
+color = Color(0.10526728, 0.53120476, 0.2366173, 1)
+
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1770885941]
 texture_repeat = 2
 material = SubResource("ShaderMaterial_1vivr")
@@ -35,16 +57,8 @@ offset_left = -108.0
 offset_top = -295.0
 offset_right = 1252.0
 offset_bottom = 945.0
-texture = ExtResource("2_con2f")
+texture = ExtResource("4_e11en")
 stretch_mode = 5
-
-[node name="ColorRect" type="ColorRect" parent="." unique_id=1685650970]
-layout_mode = 0
-offset_left = -209.0
-offset_top = -67.0
-offset_right = 1389.0
-offset_bottom = 708.0
-color = Color(0.051970907, 0.05197099, 0.051970936, 0.5764706)
 
 [node name="Main" type="Control" parent="." unique_id=1749808119]
 layout_mode = 1
@@ -131,7 +145,10 @@ offset_right = 1070.0
 offset_bottom = 452.0
 
 [node name="Easy" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=1674171352]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 100
@@ -146,10 +163,31 @@ theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
 theme_override_styles/disabled = ExtResource("5_v86rl")
 theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
 theme_override_styles/focus = ExtResource("5_v86rl")
-text = "easy"
+text = "Short Game
+"
+
+[node name="Label" type="Label" parent="DifficultySelect/VBoxContainer/Easy" unique_id=1300018411]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -25.0
+offset_right = 86.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "(20 waves)"
+label_settings = SubResource("LabelSettings_hy6xw")
+horizontal_alignment = 1
 
 [node name="Medium" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=513738674]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 100
@@ -164,10 +202,31 @@ theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
 theme_override_styles/disabled = ExtResource("5_v86rl")
 theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
 theme_override_styles/focus = ExtResource("5_v86rl")
-text = "medium"
+text = "Medium Game
+"
+
+[node name="Label" type="Label" parent="DifficultySelect/VBoxContainer/Medium" unique_id=660718038]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -25.0
+offset_right = 86.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "(35 waves)"
+label_settings = SubResource("LabelSettings_hy6xw")
+horizontal_alignment = 1
 
 [node name="Hard" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=186980228]
+custom_minimum_size = Vector2(700, 0)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
 theme_override_font_sizes/font_size = 100
@@ -182,9 +241,32 @@ theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
 theme_override_styles/disabled = ExtResource("5_v86rl")
 theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
 theme_override_styles/focus = ExtResource("5_v86rl")
-text = "hard"
+text = "Long Game"
+
+[node name="Label" type="Label" parent="DifficultySelect/VBoxContainer/Hard" unique_id=908596700]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -25.0
+offset_right = 86.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "(50 waves)"
+label_settings = SubResource("LabelSettings_hy6xw")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="DifficultySelect/VBoxContainer" unique_id=1831403746]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
 
 [node name="Monke" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=784533074]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("6_13sgg")
@@ -200,9 +282,10 @@ theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
 theme_override_styles/disabled = ExtResource("5_v86rl")
 theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
 theme_override_styles/focus = ExtResource("5_v86rl")
-text = "crapload of monkeys"
+text = "Crapload of Monkeys"
 
 [node name="TextureRect" type="TextureRect" parent="DifficultySelect/VBoxContainer/Monke" unique_id=619556975]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -217,6 +300,7 @@ pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("11_6cdou")
 
 [node name="TextureRect2" type="TextureRect" parent="DifficultySelect/VBoxContainer/Monke" unique_id=215295950]
+visible = false
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -229,6 +313,23 @@ grow_vertical = 2
 scale = Vector2(0.15, 0.15)
 pivot_offset_ratio = Vector2(0.5, 0.5)
 texture = ExtResource("11_6cdou")
+
+[node name="Label" type="Label" parent="DifficultySelect/VBoxContainer/Monke" unique_id=1660081423]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -85.0
+offset_top = -25.0
+offset_right = 86.0
+offset_bottom = 8.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "(1 extremely intense wave)"
+label_settings = SubResource("LabelSettings_hy6xw")
+horizontal_alignment = 1
 
 [node name="GoBack" type="Button" parent="DifficultySelect" unique_id=1019980162]
 layout_mode = 1

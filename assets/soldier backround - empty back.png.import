@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://0cqble56vnis"
-path="res://.godot/imported/music_toggle.png-c210f9e3dbf57233744ffa7caedbf522.ctex"
+uid="uid://cghlcyc4pwg4u"
+path="res://.godot/imported/soldier backround - empty back.png-35afc3aa7e974c272073844815c63a23.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui/music_toggle.png"
-dest_files=["res://.godot/imported/music_toggle.png-c210f9e3dbf57233744ffa7caedbf522.ctex"]
+source_file="res://assets/soldier backround - empty back.png"
+dest_files=["res://.godot/imported/soldier backround - empty back.png-35afc3aa7e974c272073844815c63a23.ctex"]
 
 [params]
 

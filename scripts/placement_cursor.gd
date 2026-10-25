@@ -26,12 +26,6 @@ func place_troop () -> void:
 	get_tree().root.add_child.call_deferred(placed_troop,true)
 	if !Settings.expend_troops: return
 	PlayerStatus.stored_troops.pop_front()
-	#check_and_signal_setup()
-#
-#func check_and_signal_setup () -> void:
-	#if PlayerStatus.stored_troops.size() <= 0:
-		#SignalBus.emit_setup_wave()
-		#return
 
 func handle_placement (wants_to_place: bool) -> void:
 	var can_place: bool = check_can_place()
@@ -43,7 +37,7 @@ func handle_placement (wants_to_place: bool) -> void:
 	instructions.visible = can_place
 	max_troops_label.visible = has_reached_max_troops
 	
-	remaining_troops_label.text = "Remaining: " + str(PlayerStatus.stored_troops.size())
+	remaining_troops_label.text = "x" + str(PlayerStatus.stored_troops.size()) # "Remaining: " + 
 	
 	if can_place and wants_to_place:
 		place_troop()

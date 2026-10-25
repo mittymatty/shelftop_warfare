@@ -1,4 +1,6 @@
 extends Control
+@export var music_to_mute: AudioStreamPlayer
+
 @onready var player: Player = get_tree().get_first_node_in_group("player")
 @onready var gun_component: GunComponent = player.gun_component
 
@@ -17,6 +19,8 @@ extends Control
 
 @onready var continue_button: Button = $TroopSelect/VBoxContainer/HBoxContainer/ContinueButton
 @onready var next_wave_button: Button = $NextWaveButton
+@onready var return_to_menu_button: Button = $WinLabel/ReturnToMenuButton
+@onready var mute_music: TextureButton = $MuteMusic
 
 @onready var wave_cleared_label: Label = $WaveClearedLabel
 @onready var wave_cleared_continue: Button = $WaveClearedLabel/WaveClearedContinue
@@ -24,8 +28,8 @@ extends Control
 @onready var unplaced_troops_notice: Label = $NextWaveButton/UnplacedTroopsNotice
 @onready var game_over_screen: TextureRect = $GameOverScreen
 
-@onready var increase_troops: Button = $TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops
-@onready var troop_increase_price_label: Label = $TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer/TroopIncreasePriceLabel
+@onready var increase_troops: Button = $IncreaseTroops
+@onready var troop_increase_price_label: Label = $IncreaseTroops/HBoxContainer/TroopIncreasePriceLabel
 
 var previous_blocks_amount: int = PlayerStatus.blocks
 
@@ -34,8 +38,11 @@ var previous_blocks_amount: int = PlayerStatus.blocks
 @onready var brick_drop: AudioStreamPlayer = $BrickDrop
 @onready var blocks_gained: Label = $BlocksGained
 
+const MUSIC_ON = preload("uid://ban0fcnnufqiy")
+const MUSIC_OFF = preload("uid://bj2qu688sfljb")
 
-const TROOP_BUTTON = preload("uid://bdmyssrhu4j55")
+const MENU: PackedScene = preload("uid://rsrpe7sqso4h")
+const TROOP_BUTTON: PackedScene = preload("uid://bdmyssrhu4j55")
 var trooper_buttons_at_a_time: int = 3
 
 func create_troop_buttons () -> void:
@@ -84,6 +91,7 @@ func close_troop_selector () -> void:
 	on_troops_changed()
 
 func on_wave_change () -> void:
+	increase_troops.hide()
 	next_wave_button.hide()
 	wave_count.show()
 	wave_count.text = "Wave: " + str(PlayerStatus.current_wave)
@@ -134,6 +142,15 @@ func handle_enemy_count () -> void:
 	#enemies_count_label.visible = PlayerStatus.active_enemies > 0
 	enemies_count_label.text = "Enemies Left: " + str(PlayerStatus.active_enemies)
 
+func on_mute_music_pressed () -> void:
+	var previously_muted: bool = is_equal_approx(music_to_mute.volume_db,-80.0)
+	music_to_mute.volume_db = -12.0 if previously_muted else -80.0
+	mute_music.texture_normal = MUSIC_ON if previously_muted else MUSIC_OFF
+	mute_music.release_focus()
+
+func on_return_to_main_menu_pressed () -> void:
+	get_tree().change_scene_to_packed(MENU)
+
 func _process(_delta: float) -> void:
 	handle_enemy_count()
 
@@ -153,6 +170,8 @@ func _ready() -> void:
 	gun_component.ammo_changed.connect(on_ammo_changed)
 	next_wave_button.pressed.connect(on_next_wave_button_pressed)
 	increase_troops.pressed.connect(on_increase_troops_pressed)
+	mute_music.pressed.connect(on_mute_music_pressed)
+	return_to_menu_button.pressed.connect()
 	
 	SignalBus.blocks_changed.connect(on_blocks_changed)
 	SignalBus.game_won.connect(on_game_won)
