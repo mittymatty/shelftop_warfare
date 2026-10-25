@@ -70,7 +70,6 @@ offset_bottom = 712.0
 color = Color(0, 0, 0, 0.18039216)
 
 [node name="Main" type="Control" parent="." unique_id=1749808119]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -142,6 +141,7 @@ theme_override_styles/focus = ExtResource("5_v86rl")
 text = "START!"
 
 [node name="DifficultySelect" type="Control" parent="." unique_id=336688795]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
