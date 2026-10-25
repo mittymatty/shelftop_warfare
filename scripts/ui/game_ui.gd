@@ -37,6 +37,7 @@ var previous_blocks_amount: int = PlayerStatus.blocks
 @onready var brick_click: AudioStreamPlayer = $BrickClick
 @onready var brick_drop: AudioStreamPlayer = $BrickDrop
 @onready var blocks_gained: Label = $BlocksGained
+@onready var fanfare: AudioStreamPlayer = $Fanfare
 
 const MUSIC_ON = preload("uid://ban0fcnnufqiy")
 const MUSIC_OFF = preload("uid://bj2qu688sfljb")
@@ -114,6 +115,7 @@ func on_wave_cleared () -> void:
 	open_troop_selector()
 
 func on_game_won () -> void:
+	fanfare.play()
 	wave_cleared_label.hide()
 	win_label.show()
 	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.NONE

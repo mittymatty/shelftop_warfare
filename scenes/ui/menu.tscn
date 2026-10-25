@@ -188,7 +188,7 @@ offset_right = 86.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "(25 waves)"
+text = "(25 waves, 1 boss)"
 label_settings = SubResource("LabelSettings_hy6xw")
 horizontal_alignment = 1
 
@@ -227,7 +227,7 @@ offset_right = 86.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "(35 waves)"
+text = "(35 waves, 2 bosses)"
 label_settings = SubResource("LabelSettings_hy6xw")
 horizontal_alignment = 1
 
@@ -265,7 +265,7 @@ offset_right = 86.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "(50 waves)"
+text = "(50 waves, 4 bosses )"
 label_settings = SubResource("LabelSettings_hy6xw")
 horizontal_alignment = 1
 
@@ -336,7 +336,7 @@ offset_right = 86.0
 offset_bottom = 8.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "(1 extremely intense wave)"
+text = "(1 extremely monke wave)"
 label_settings = SubResource("LabelSettings_hy6xw")
 horizontal_alignment = 1
 

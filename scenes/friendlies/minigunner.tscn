@@ -8,11 +8,11 @@
 
 [node name="GunComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="2" unique_id=769225365 node_paths=PackedStringArray("fire_sound")]
 fire_sound = NodePath("../../MachineGunShot")
-bullet_damage = 0.3
+bullet_damage = 0.25
 bullet_speed = 375.0
-max_ammo = 50
+max_ammo = 45
 bullets_per_shot = 2
-maximum_spread_angle = 0.05
+maximum_spread_angle = 0.06
 
 [node name="CooldownTimer" parent="Components/GunComponent" index="0" unique_id=406347045]
 wait_time = 0.1

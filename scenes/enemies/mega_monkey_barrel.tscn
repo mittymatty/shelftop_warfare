@@ -22,6 +22,9 @@ texture = ExtResource("2_q4qd5")
 [node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="0" unique_id=1130167078]
 max_health = 120.0
 
+[node name="JumpComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="4" unique_id=466440326]
+jump_velocity = 0.0
+
 [node name="HealthBar" parent="." index="3" unique_id=1492475502]
 offset_left = -22.0
 offset_top = -45.0

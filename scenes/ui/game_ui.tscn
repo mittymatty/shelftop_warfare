@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://ban0fcnnufqiy" path="res://assets/ui/music_on.png" id="16_i3ans"]
 [ext_resource type="AudioStream" uid="uid://8f0f05fb576m" path="res://audio/brick_click.ogg" id="16_pbku6"]
 [ext_resource type="AudioStream" uid="uid://86r8kvoaa0af" path="res://audio/brick_drop.ogg" id="17_i3ans"]
+[ext_resource type="AudioStream" uid="uid://c75jmiq6f0x4k" path="res://audio/fanfare.ogg" id="18_i3ans"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u001w"]
 font = ExtResource("2_bma8u")
@@ -635,3 +636,6 @@ volume_db = -5.0
 [node name="BrickDrop" type="AudioStreamPlayer" parent="." unique_id=386166907]
 stream = ExtResource("17_i3ans")
 volume_db = -5.0
+
+[node name="Fanfare" type="AudioStreamPlayer" parent="." unique_id=204505861]
+stream = ExtResource("18_i3ans")
