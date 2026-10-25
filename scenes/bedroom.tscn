@@ -35,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://oacadfc7ti8o" path="res://scenes/waves/wave_19.tscn" id="20_wltlc"]
 [ext_resource type="PackedScene" uid="uid://et44b36uh3gj" path="res://scenes/waves/wave_20.tscn" id="21_styym"]
 [ext_resource type="Texture2D" uid="uid://cy63j6y3vyw0w" path="res://assets/cardboard Box.png" id="35_tl7to"]
-[ext_resource type="PackedScene" uid="uid://d3pfu4e8n140l" path="res://scenes/enemies/mega_monkey_barrel.tscn" id="36_15if8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(2574, 48)
@@ -257,6 +256,3 @@ position = Vector2(1667, 315)
 scale = Vector2(3, 3)
 texture = ExtResource("35_tl7to")
 flip_h = true
-
-[node name="MegaMonkeyBarrel" parent="." unique_id=733239099 instance=ExtResource("36_15if8")]
-position = Vector2(-381, 323)

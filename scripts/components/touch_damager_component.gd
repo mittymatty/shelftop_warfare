@@ -8,6 +8,8 @@ class_name TouchDamagerComponent extends Node
 @export var hazard_owner: Node2D
 @export var attack_box: Area2D
 @export var cooldown_timer: Timer
+
+@export_subgroup("Optional Nodes")
 @export var attack_sound: AudioStreamPlayer2D
 
 func _ready() -> void:
@@ -25,6 +27,8 @@ func scan_and_deal_damage() -> void:
 	
 	if attack_hit:
 		cooldown_timer.start()
+	if attack_hit and attack_sound:
+		attack_sound.play()
 
 func on_attack_box_contact(_body: Node2D) -> void:
 	if !cooldown_timer.is_stopped(): return

@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://c81tenh12vsq8"]
+
+[ext_resource type="PackedScene" uid="uid://c60kihk36ttm5" path="res://scenes/enemies/enemy_base.tscn" id="1_6exjb"]
+[ext_resource type="Texture2D" uid="uid://dhiaysq70xswo" path="res://assets/enemies/ted.png" id="2_cs17f"]
+[ext_resource type="Script" uid="uid://d2bhalw25axvp" path="res://scripts/enemies/touch_damage_enemy.gd" id="2_ppf2p"]
+[ext_resource type="PackedScene" uid="uid://ygux51qhvuoa" path="res://scenes/components/touch_damager_component.tscn" id="3_cs17f"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_owlku"]
+radius = 31.0
+height = 164.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ppf2p"]
+size = Vector2(60, 162)
+
+[node name="Ted" unique_id=733239099 node_paths=PackedStringArray("touch_damager_component") instance=ExtResource("1_6exjb")]
+script = ExtResource("2_ppf2p")
+touch_damager_component = NodePath("Components/TouchDamagerComponent")
+
+[node name="Ted" type="Sprite2D" parent="Visuals" parent_id_path=PackedInt32Array(434325312) index="0" unique_id=1074646420]
+texture = ExtResource("2_cs17f")
+
+[node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="0" unique_id=1130167078]
+max_health = 1000.0
+
+[node name="MovementComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="1" unique_id=275666189]
+speed = 60.0
+
+[node name="TouchDamagerComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="7" unique_id=934853369 node_paths=PackedStringArray("hazard_owner", "attack_box") instance=ExtResource("3_cs17f")]
+damage = 30.0
+knockback = Vector2(150, -50)
+hazard_owner = NodePath("../..")
+attack_box = NodePath("../../TouchDamageBox")
+
+[node name="HealthBar" parent="." index="3" unique_id=1492475502]
+offset_left = -43.0
+offset_top = -103.0
+offset_right = 43.0
+offset_bottom = -95.0
+
+[node name="Collision" parent="." index="4" unique_id=1302760824]
+position = Vector2(-2, 4)
+shape = SubResource("CapsuleShape2D_owlku")
+
+[node name="TouchDamageBox" type="Area2D" parent="." index="7" unique_id=838301079]
+collision_layer = 0
+collision_mask = 66
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TouchDamageBox" index="0" unique_id=1834174507]
+position = Vector2(-1, 3)
+shape = SubResource("RectangleShape2D_ppf2p")
