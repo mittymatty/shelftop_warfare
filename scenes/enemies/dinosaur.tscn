@@ -37,7 +37,7 @@ gravity = 700.0
 jump_velocity = -300.0
 
 [node name="TouchDamagerComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="7" unique_id=934853369 node_paths=PackedStringArray("hazard_owner", "attack_box", "attack_sound") instance=ExtResource("4_jsl0y")]
-damage = 20.0
+damage = 9.0
 knockback = Vector2(200, -50)
 hazard_owner = NodePath("../..")
 attack_box = NodePath("../../TouchDamager")

@@ -6,7 +6,8 @@
 [node name="RifleMan" unique_id=365000319 instance=ExtResource("1_bv14e")]
 
 [node name="GunComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="2" unique_id=769225365]
-bullet_speed = 450.0
+bullet_damage = 8.0
+bullet_speed = 550.0
 max_ammo = 3
 
 [node name="CooldownTimer" parent="Components/GunComponent" index="0" unique_id=406347045]
@@ -14,6 +15,9 @@ wait_time = 1.5
 
 [node name="ReloadTimer" parent="Components/GunComponent" index="1" unique_id=343490544]
 wait_time = 2.5
+
+[node name="TrackerComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="4" unique_id=1220211303]
+start_tracking_distance = 900.0
 
 [node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="5" unique_id=1130167078]
 max_health = 90.0
@@ -25,3 +29,4 @@ texture = ExtResource("2_78565")
 position = Vector2(10, -1)
 
 [editable path="Components/GunComponent"]
+[editable path="Components/HealthComponent"]

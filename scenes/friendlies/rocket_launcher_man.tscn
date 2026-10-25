@@ -14,7 +14,7 @@ bullet_speed = 0.0
 max_ammo = 1
 
 [node name="TrackerComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="4" unique_id=1220211303]
-start_tracking_distance = 80.0
+start_tracking_distance = 650.0
 
 [node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="5" unique_id=1130167078]
 max_health = 80.0

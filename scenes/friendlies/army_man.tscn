@@ -52,9 +52,9 @@ gun_visuals = NodePath("../../Visuals/Gun")
 muzzle = NodePath("../../Visuals/Gun/Muzzle")
 fire_sound = NodePath("../../Gunshot")
 reload_sound = NodePath("../../Reload")
-bullet_damage = 6.0
+bullet_damage = 6.5
 bullet_speed = 350.0
-max_ammo = 5
+max_ammo = 6
 
 [node name="CooldownTimer" parent="Components/GunComponent" index="0" unique_id=406347045]
 wait_time = 1.0
@@ -67,11 +67,16 @@ nodes_to_flip = [NodePath("../../Visuals")]
 
 [node name="TrackerComponent" parent="Components" unique_id=1220211303 node_paths=PackedStringArray("tracker") instance=ExtResource("6_egd3g")]
 tracker = NodePath("../..")
+start_tracking_distance = 500.0
 
 [node name="HealthComponent" parent="Components" unique_id=1130167078 node_paths=PackedStringArray("body") instance=ExtResource("8_6jgr1")]
 max_health = 50.0
 knockback_multiplier = 0.1
+i_time = true
 body = NodePath("../..")
+
+[node name="I_timer" parent="Components/HealthComponent" index="0" unique_id=1350377943]
+wait_time = 0.05
 
 [node name="Visuals" type="Node2D" parent="." unique_id=1694800844]
 

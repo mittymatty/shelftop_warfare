@@ -8,9 +8,11 @@
 
 [node name="GunComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="2" unique_id=769225365 node_paths=PackedStringArray("fire_sound")]
 fire_sound = NodePath("../../ShotgunShot")
+bullet_damage = 7.0
+bullet_speed = 370.0
 max_ammo = 3
-bullets_per_shot = 4
-maximum_spread_angle = 0.5
+bullets_per_shot = 5
+maximum_spread_angle = 0.25
 
 [node name="ReloadTimer" parent="Components/GunComponent" index="1" unique_id=343490544]
 wait_time = 2.0

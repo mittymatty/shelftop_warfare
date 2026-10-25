@@ -8,7 +8,7 @@
 
 [node name="GunComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="2" unique_id=769225365 node_paths=PackedStringArray("fire_sound")]
 fire_sound = NodePath("../../MachineGunShot")
-bullet_damage = 0.25
+bullet_damage = 0.5
 bullet_speed = 375.0
 max_ammo = 45
 bullets_per_shot = 2
@@ -19,6 +19,9 @@ wait_time = 0.1
 
 [node name="ReloadTimer" parent="Components/GunComponent" index="1" unique_id=343490544]
 wait_time = 5.0
+
+[node name="TrackerComponent" parent="Components" parent_id_path=PackedInt32Array(15715907) index="4" unique_id=1220211303]
+start_tracking_distance = 550.0
 
 [node name="Gun" parent="Visuals" parent_id_path=PackedInt32Array(1694800844) index="2" unique_id=510723242]
 position = Vector2(-2, 0)

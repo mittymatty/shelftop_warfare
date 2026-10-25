@@ -31,7 +31,13 @@ func handle_parachute () -> void:
 		parachute.visible = false
 
 func _physics_process(delta: float) -> void:
-	tracker_component.tracker_target = get_nearest_node_in_group("enemies")
+	var nearest_enemy: Enemy = get_nearest_node_in_group("enemies")
+	
+	if nearest_enemy and nearest_enemy.global_position.distance_to(global_position) <= tracker_component.start_tracking_distance:
+		tracker_component.tracker_target = nearest_enemy
+	else:
+		tracker_component.tracker_target = null
+	
 	if !is_parachute_attached:
 		gravity_component.handle_gravity(self,delta)
 	else:
