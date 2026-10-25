@@ -35,7 +35,11 @@
 [ext_resource type="Texture2D" uid="uid://c18tf3roqqinn" path="res://assets/blocks/red a.png" id="33_vv81d"]
 [ext_resource type="Texture2D" uid="uid://cuc3uisyey1ea" path="res://assets/blocks/yellow x.png" id="34_vkrh4"]
 [ext_resource type="Texture2D" uid="uid://cbv8j5xwmuixe" path="res://assets/blocks/green 2.png" id="35_xkckq"]
+[ext_resource type="Texture2D" uid="uid://btkjfpweuimpw" path="res://assets/blocks/cyan C.png" id="36_auuos"]
 [ext_resource type="Texture2D" uid="uid://cy63j6y3vyw0w" path="res://assets/cardboard Box.png" id="36_u65of"]
+[ext_resource type="Texture2D" uid="uid://d1crcivwgdifs" path="res://assets/blocks/green B.png" id="37_h2uvd"]
+[ext_resource type="Texture2D" uid="uid://b7rc5bpaw6xpy" path="res://assets/blocks/pink 3.png" id="38_8leom"]
+[ext_resource type="Texture2D" uid="uid://c78vn6acw6ki3" path="res://assets/blocks/red 1.png" id="39_ewv1e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
 size = Vector2(2574, 48)
@@ -63,6 +67,26 @@ texture = ExtResource("35_xkckq")
 texture_region_size = Vector2i(64, 64)
 0:0/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_woenf"]
+texture = ExtResource("36_auuos")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ffc8m"]
+texture = ExtResource("37_h2uvd")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_scjwa"]
+texture = ExtResource("38_8leom")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4nu3r"]
+texture = ExtResource("39_ewv1e")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_1vivr"]
 tile_size = Vector2i(64, 64)
 physics_layer_0/collision_layer = 1
@@ -70,6 +94,10 @@ sources/0 = SubResource("TileSetAtlasSource_cixf6")
 sources/1 = SubResource("TileSetAtlasSource_bd3ru")
 sources/2 = SubResource("TileSetAtlasSource_cs7aj")
 sources/3 = SubResource("TileSetAtlasSource_43jao")
+sources/4 = SubResource("TileSetAtlasSource_woenf")
+sources/5 = SubResource("TileSetAtlasSource_ffc8m")
+sources/6 = SubResource("TileSetAtlasSource_scjwa")
+sources/7 = SubResource("TileSetAtlasSource_4nu3r")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8vrlf"]
 size = Vector2(254, 6)
@@ -168,7 +196,7 @@ texture = ExtResource("31_2capu")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1328139223]
 z_index = -1
-tile_map_data = PackedByteArray("AAABAAUAAAAAAAAAAAAAAAUAAQAAAAAAAAAQAAUAAwAAAAAAAAAFAAUAAQAAAAAAAAAMAAUAAwAAAAAAAAAPAAUAAwAAAAAAAAD9/wUAAgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUAAgAAAAAAAAALAAUAAQAAAAAAAAACAAUAAQAAAAAAAAAIAAUAAQAAAAAAAAAJAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAARAAUAAAAAAAAAAAD//wUAAQAAAAAAAAD9/wQAAwAAAAAAAAD//wQAAgAAAAAAAAAJAAQAAwAAAAAAAAAPAAQAAwAAAAAAAAAIAAQAAgAAAAAAAAATAAUAAAAAAAAAAAAUAAQAAQAAAAAAAAAUAAUAAwAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAABAAUABAAAAAAAAAAAAAUABQAAAAAAAAAQAAUAAwAAAAAAAAAFAAUAAQAAAAAAAAAMAAUABgAAAAAAAAAPAAUABAAAAAAAAAD9/wUABgAAAAAAAAAGAAUAAgAAAAAAAAAHAAUABwAAAAAAAAALAAUAAQAAAAAAAAACAAUAAQAAAAAAAAAIAAUABQAAAAAAAAAJAAUAAAAAAAAAAAAOAAUAAAAAAAAAAAARAAUABwAAAAAAAAD//wUAAQAAAAAAAAD9/wQABwAAAAAAAAD//wQAAgAAAAAAAAAJAAQAAwAAAAAAAAAPAAQABQAAAAAAAAAIAAQABgAAAAAAAAATAAUAAAAAAAAAAAAUAAQABgAAAAAAAAAUAAUABQAAAAAAAAA=")
 tile_set = SubResource("TileSet_1vivr")
 
 [node name="BlockCollisions" type="StaticBody2D" parent="." unique_id=570103455]
