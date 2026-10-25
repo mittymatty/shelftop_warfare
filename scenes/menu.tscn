@@ -1,0 +1,260 @@
+[gd_scene format=3 uid="uid://pe2eh7dvluff"]
+
+[ext_resource type="Script" uid="uid://bjk423qubqs6d" path="res://scripts/ui/menu.gd" id="1_70i5f"]
+[ext_resource type="AudioStream" path="res://audio/menu_loop.ogg" id="1_mj5lg"]
+[ext_resource type="Shader" uid="uid://cv4hcn5kggcxk" path="res://scripts/shaders/menu.gdshader" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://bwf2cvuh5n1m2" path="res://assets/soldier backround.png" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://bd0ltscjwqt51" path="res://assets/title.png" id="3_con2f"]
+[ext_resource type="FontFile" uid="uid://dn1dl7h18dgue" path="res://assets/fonts/YOSIA-SCRIBBLE.ttf" id="4_g3eks"]
+[ext_resource type="StyleBox" uid="uid://u7hmdgo8i1mm" path="res://resources/cardboard button.tres" id="5_v86rl"]
+[ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="6_13sgg"]
+[ext_resource type="Texture2D" uid="uid://bqxnmhy74ad34" path="res://assets/monke.jpg" id="11_6cdou"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1vivr"]
+shader = ExtResource("1_vjb58")
+
+[node name="Menu" type="Control" unique_id=138921986]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_70i5f")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=2037396134]
+stream = ExtResource("1_mj5lg")
+autoplay = true
+parameters/looping = true
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1770885941]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_1vivr")
+layout_mode = 0
+offset_left = -108.0
+offset_top = -295.0
+offset_right = 1252.0
+offset_bottom = 945.0
+texture = ExtResource("2_con2f")
+stretch_mode = 5
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1685650970]
+layout_mode = 0
+offset_left = -209.0
+offset_top = -67.0
+offset_right = 1389.0
+offset_bottom = 708.0
+color = Color(0.051970907, 0.05197099, 0.051970936, 0.5764706)
+
+[node name="Main" type="Control" parent="." unique_id=1749808119]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="Main" unique_id=409462308]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -208.5
+offset_right = 208.5
+offset_bottom = 412.0
+grow_horizontal = 2
+texture = ExtResource("3_con2f")
+stretch_mode = 4
+
+[node name="QuitButton" type="Button" parent="Main" unique_id=468363205]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -139.0
+offset_top = 149.0
+offset_right = 140.0
+offset_bottom = 241.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.064696394, 0.0646966, 0.06469644, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.35686275, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_g3eks")
+theme_override_font_sizes/font_size = 37
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "QUIT?"
+
+[node name="StartButton" type="Button" parent="Main" unique_id=1110373999]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = 26.0
+offset_right = 141.0
+offset_bottom = 118.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 0.23529412, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "START!"
+
+[node name="DifficultySelect" type="Control" parent="." unique_id=336688795]
+visible = false
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DifficultySelect" unique_id=1466506843]
+layout_mode = 0
+offset_left = 96.0
+offset_top = 40.0
+offset_right = 1070.0
+offset_bottom = 452.0
+
+[node name="Easy" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=1674171352]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/normal_mirrored = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/hover_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "easy"
+
+[node name="Medium" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=513738674]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/normal_mirrored = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/hover_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "medium"
+
+[node name="Hard" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=186980228]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/normal_mirrored = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/hover_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "hard"
+
+[node name="Monke" type="Button" parent="DifficultySelect/VBoxContainer" unique_id=784533074]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 80
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/normal_mirrored = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/hover_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "crapload of monkeys"
+
+[node name="TextureRect" type="TextureRect" parent="DifficultySelect/VBoxContainer/Monke" unique_id=619556975]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = -246.0
+offset_top = -223.0
+offset_right = 202.0
+offset_bottom = 223.0
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("11_6cdou")
+
+[node name="TextureRect2" type="TextureRect" parent="DifficultySelect/VBoxContainer/Monke" unique_id=215295950]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 767.0
+offset_top = -223.0
+offset_right = 1215.0
+offset_bottom = 223.0
+grow_vertical = 2
+scale = Vector2(0.15, 0.15)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("11_6cdou")
+
+[node name="GoBack" type="Button" parent="DifficultySelect" unique_id=1019980162]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 391.0
+offset_top = 508.0
+offset_right = 739.0
+offset_bottom = 595.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("6_13sgg")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = ExtResource("5_v86rl")
+theme_override_styles/normal_mirrored = ExtResource("5_v86rl")
+theme_override_styles/pressed = ExtResource("5_v86rl")
+theme_override_styles/pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover = ExtResource("5_v86rl")
+theme_override_styles/hover_mirrored = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed = ExtResource("5_v86rl")
+theme_override_styles/hover_pressed_mirrored = ExtResource("5_v86rl")
+theme_override_styles/disabled = ExtResource("5_v86rl")
+theme_override_styles/disabled_mirrored = ExtResource("5_v86rl")
+theme_override_styles/focus = ExtResource("5_v86rl")
+text = "go back"
