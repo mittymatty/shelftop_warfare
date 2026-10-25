@@ -27,4 +27,5 @@ var all_possible_troop_data: Array[TroopData] = [
 	preload("res://resources/shotgun_trooper.tres"),
 	preload("res://resources/two_pistol_troopers.tres"),
 	preload("res://resources/rocket_trooper.tres"),
+	preload("res://resources/minigun_trooper.tres"),
 ]

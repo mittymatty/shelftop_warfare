@@ -1,6 +1,5 @@
 class_name Enemy extends CharacterBody2D
 
-
 @export_subgroup("Animation")
 @export var wobble_walk: bool = true
 

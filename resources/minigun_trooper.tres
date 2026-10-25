@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="TroopData" format=3 uid="uid://6tprqyhbkdjs"]
+
+[ext_resource type="Script" uid="uid://d0ehi87n8i5lp" path="res://scripts/custom_resources/troop_data.gd" id="1_inylf"]
+[ext_resource type="PackedScene" uid="uid://cyt2qlr1sidal" path="res://scenes/friendlies/minigunner.tscn" id="2_3kufc"]
+
+[resource]
+script = ExtResource("1_inylf")
+troop_name = "Minigun"
+troop = ExtResource("2_3kufc")
+blocks_cost = 5
+metadata/_custom_type_script = "uid://d0ehi87n8i5lp"
