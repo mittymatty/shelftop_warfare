@@ -9,6 +9,7 @@ class_name PlacementCursor extends Marker2D
 @onready var show_before_first_placement: Control = $ShowBeforeFirstPlacement
 @onready var instructions: Label = $ShowBeforeFirstPlacement/Instructions
 @onready var remaining_troops_label: Label = $RemainingTroopsLabel
+@onready var max_troops_label: Label = $MaxTroopsLabel
 
 func check_can_place () -> bool:
 	if PlayerStatus.active_troops >= PlayerStatus.max_troops_active:
@@ -34,11 +35,13 @@ func place_troop () -> void:
 
 func handle_placement (wants_to_place: bool) -> void:
 	var can_place: bool = check_can_place()
+	var has_reached_max_troops: bool = PlayerStatus.active_troops >= PlayerStatus.max_troops_active
 	global_position = get_global_mouse_position()
 	
 	sprite_invalid.visible = !can_place
 	sprite_valid.visible = can_place
 	instructions.visible = can_place
+	max_troops_label.visible = has_reached_max_troops
 	
 	remaining_troops_label.text = "Remaining: " + str(PlayerStatus.stored_troops.size())
 	

@@ -13,6 +13,7 @@
 [ext_resource type="Resource" uid="uid://bl28phk4lorh7" path="res://resources/shotgun_trooper.tres" id="8_k7elv"]
 [ext_resource type="Resource" uid="uid://ca6egkjw3vm77" path="res://resources/rifle_trooper.tres" id="9_fftnl"]
 [ext_resource type="Texture2D" uid="uid://c43h40g73nxtn" path="res://assets/enemies/monkey.png" id="10_bxde6"]
+[ext_resource type="Texture2D" uid="uid://da8yohu5i4tk8" path="res://assets/toy_soldier.png" id="14_x0n6o"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_u001w"]
 font = ExtResource("2_bma8u")
@@ -148,16 +149,15 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TroopSelect" type="MarginContainer" parent="." unique_id=1224922898]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 275
-theme_override_constants/margin_top = 175
-theme_override_constants/margin_right = 275
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 225
+theme_override_constants/margin_right = 300
 theme_override_constants/margin_bottom = 200
 
 [node name="NinePatchRect" type="NinePatchRect" parent="TroopSelect" unique_id=1495202154]
@@ -205,6 +205,53 @@ troop_data = ExtResource("8_k7elv")
 [node name="TroopButton3" parent="TroopSelect/VBoxContainer/MarginContainer/TroopButtonContainer" unique_id=421401630 instance=ExtResource("4_fct72")]
 layout_mode = 2
 troop_data = ExtResource("9_fftnl")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="TroopSelect/VBoxContainer" unique_id=177427150]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 1
+
+[node name="IncreaseTroops" type="Button" parent="TroopSelect/VBoxContainer/HBoxContainer2" unique_id=1592781313]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_bma8u")
+theme_override_font_sizes/font_size = 40
+text = "+4 Max Troops"
+icon = ExtResource("14_x0n6o")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops" unique_id=455154287]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -102.5
+offset_top = -35.5
+offset_right = 97.5
+offset_bottom = 54.5
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer" unique_id=1397437183]
+custom_maximum_size = Vector2(50, 50)
+layout_mode = 2
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, 10)
+texture = ExtResource("4_qrkc0")
+expand_mode = 2
+
+[node name="TroopIncreasePriceLabel" type="Label" parent="TroopSelect/VBoxContainer/HBoxContainer2/IncreaseTroops/HBoxContainer" unique_id=1025479501]
+layout_mode = 2
+size_flags_horizontal = 4
+offset_transform_enabled = true
+theme_override_font_sizes/font_size = 90
+text = "5"
+label_settings = SubResource("LabelSettings_opxtl")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="TroopSelect/VBoxContainer" unique_id=805179365]
 layout_mode = 2
@@ -328,6 +375,7 @@ theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
 text = "(Click Here to Continue)"
 
 [node name="NextWaveButton" type="Button" parent="." unique_id=1546073703]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -344,7 +392,7 @@ theme_override_styles/pressed = SubResource("StyleBoxEmpty_opxtl")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
 text = "Click Here to Begin Next Wave"
 
-[node name="Label" type="Label" parent="NextWaveButton" unique_id=1233350551]
+[node name="UnplacedTroopsNotice" type="Label" parent="NextWaveButton" unique_id=1233350551]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

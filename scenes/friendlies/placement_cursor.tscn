@@ -18,6 +18,12 @@ font = ExtResource("4_ihoqm")
 font_size = 80
 outline_size = 1
 
+[sub_resource type="LabelSettings" id="LabelSettings_c8m45"]
+font = ExtResource("4_ihoqm")
+font_size = 70
+font_color = Color(0.9999998, 0.012074706, 0.006631455, 1)
+outline_size = 1
+
 [node name="PlacementCursor" type="Marker2D" unique_id=1614709603]
 z_index = 5
 script = ExtResource("1_ai2in")
@@ -94,4 +100,25 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 90
 text = "Remaining: 1"
 label_settings = SubResource("LabelSettings_ihoqm")
+horizontal_alignment = 1
+
+[node name="MaxTroopsLabel" type="Label" parent="." unique_id=1429362399]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.00003
+offset_top = -34.000004
+offset_right = 320.99997
+offset_bottom = 66.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 90
+text = "Max Troops Reached!"
+label_settings = SubResource("LabelSettings_c8m45")
 horizontal_alignment = 1
