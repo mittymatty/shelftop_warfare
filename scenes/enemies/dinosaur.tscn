@@ -24,7 +24,7 @@ texture = ExtResource("2_tj4sg")
 [node name="EmptyAttackSound" type="AudioStreamPlayer2D" parent="Sounds" parent_id_path=PackedInt32Array(947285440) index="0" unique_id=889926079]
 
 [node name="HealthComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="0" unique_id=1130167078]
-max_health = 250.0
+max_health = 200.0
 knockback_multiplier = 0.5
 
 [node name="MovementComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="1" unique_id=275666189]
@@ -37,7 +37,7 @@ gravity = 700.0
 jump_velocity = -300.0
 
 [node name="TouchDamagerComponent" parent="Components" parent_id_path=PackedInt32Array(887696548) index="7" unique_id=934853369 node_paths=PackedStringArray("hazard_owner", "attack_box", "attack_sound") instance=ExtResource("4_jsl0y")]
-damage = 9.0
+damage = 10.0
 knockback = Vector2(200, -50)
 hazard_owner = NodePath("../..")
 attack_box = NodePath("../../TouchDamager")

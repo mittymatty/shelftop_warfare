@@ -38,9 +38,13 @@ var previous_blocks_amount: int = PlayerStatus.blocks
 @onready var brick_drop: AudioStreamPlayer = $BrickDrop
 @onready var blocks_gained: Label = $BlocksGained
 @onready var fanfare: AudioStreamPlayer = $Fanfare
+@onready var mute_voices: TextureButton = $MuteVoices
 
 const MUSIC_ON = preload("uid://ban0fcnnufqiy")
 const MUSIC_OFF = preload("uid://bj2qu688sfljb")
+
+const VOICES_ON = preload("uid://dpat8nrtxn28t")
+const VOICES_OFF = preload("uid://bs7eyr3wry3do")
 
 const TROOP_BUTTON: PackedScene = preload("uid://bdmyssrhu4j55")
 var trooper_buttons_at_a_time: int = 3
@@ -149,6 +153,13 @@ func on_mute_music_pressed () -> void:
 	mute_music.texture_normal = MUSIC_ON if previously_muted else MUSIC_OFF
 	mute_music.release_focus()
 
+func on_mute_voices_pressed () -> void:
+	var voice_bus_index: int = AudioServer.get_bus_index("Voices")
+	var old_volume: float = AudioServer.get_bus_volume_db(voice_bus_index)
+	var new_volume: float = -80.0 if is_zero_approx(old_volume) else 0.0
+	mute_voices.texture_normal = VOICES_OFF if is_equal_approx(new_volume,-80.0) else VOICES_ON
+	AudioServer.set_bus_volume_db(voice_bus_index,new_volume) 
+
 func on_return_to_main_menu_pressed () -> void:
 	get_tree().call_deferred("change_scene_to_packed",load("uid://rsrpe7sqso4h"))
 
@@ -173,6 +184,7 @@ func _ready() -> void:
 	increase_troops.pressed.connect(on_increase_troops_pressed)
 	mute_music.pressed.connect(on_mute_music_pressed)
 	return_to_menu_button.pressed.connect(on_return_to_main_menu_pressed)
+	mute_voices.pressed.connect(on_mute_voices_pressed)
 	
 	SignalBus.blocks_changed.connect(on_blocks_changed)
 	SignalBus.game_won.connect(on_game_won)

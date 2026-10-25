@@ -227,13 +227,16 @@ max_distance = 500.0
 
 [node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=1063269541]
 stream = SubResource("AudioStreamRandomizer_xrivr")
+volume_db = -7.0
 autoplay = true
 max_distance = 600.0
+bus = &"Voices"
 
 [node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=670531871]
 stream = SubResource("AudioStreamRandomizer_cailu")
-volume_db = -5.0
+volume_db = -8.0
 max_distance = 600.0
+bus = &"Voices"
 
 [editable path="Components/GunComponent"]
 [editable path="Components/HealthComponent"]
