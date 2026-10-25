@@ -9,6 +9,7 @@ signal enemy_defeated
 signal blocks_changed
 signal game_over
 signal game_won
+signal troops_changed
 
 func emit_enter_placement_mode () -> void:
 	enter_placement_mode.emit()
@@ -36,3 +37,6 @@ func emit_game_over() -> void:
 
 func emit_game_won() -> void:
 	game_won.emit()
+
+func emit_troops_changed() -> void:
+	troops_changed.emit()

@@ -8,8 +8,11 @@ class_name PlacementCursor extends Marker2D
 
 @onready var show_before_first_placement: Control = $ShowBeforeFirstPlacement
 @onready var instructions: Label = $ShowBeforeFirstPlacement/Instructions
+@onready var remaining_troops_label: Label = $RemainingTroopsLabel
 
 func check_can_place () -> bool:
+	if PlayerStatus.active_troops >= PlayerStatus.max_troops_active:
+		return false
 	if invalidator.get_overlapping_bodies().size() > 0 or !validator.is_colliding() or roof_check.is_colliding():
 		return false
 	return true
@@ -22,12 +25,12 @@ func place_troop () -> void:
 	get_tree().root.add_child.call_deferred(placed_troop,true)
 	if !Settings.expend_troops: return
 	PlayerStatus.stored_troops.pop_front()
-	check_and_signal_setup()
-
-func check_and_signal_setup () -> void:
-	if PlayerStatus.stored_troops.size() <= 0:
-		SignalBus.emit_setup_wave()
-		return
+	#check_and_signal_setup()
+#
+#func check_and_signal_setup () -> void:
+	#if PlayerStatus.stored_troops.size() <= 0:
+		#SignalBus.emit_setup_wave()
+		#return
 
 func handle_placement (wants_to_place: bool) -> void:
 	var can_place: bool = check_can_place()
@@ -36,6 +39,8 @@ func handle_placement (wants_to_place: bool) -> void:
 	sprite_invalid.visible = !can_place
 	sprite_valid.visible = can_place
 	instructions.visible = can_place
+	
+	remaining_troops_label.text = "Remaining: " + str(PlayerStatus.stored_troops.size())
 	
 	if can_place and wants_to_place:
 		place_troop()

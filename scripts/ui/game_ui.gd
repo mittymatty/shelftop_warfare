@@ -6,6 +6,7 @@ extends Control
 @onready var wave_count: Label = $Vitals/Middle/WaveCount
 @onready var blocks_count: Label = $Vitals/Middle/BlocksCount
 @onready var ammo_counter: Label = $Vitals/Right/AmmoCounter
+@onready var troop_counter: Label = $Vitals/Right/TroopCounter
 
 @onready var troop_select: MarginContainer = $TroopSelect
 @onready var troop_button_container: HBoxContainer = $TroopSelect/VBoxContainer/MarginContainer/TroopButtonContainer
@@ -14,6 +15,7 @@ extends Control
 @onready var refresh_price: Label = $TroopSelect/VBoxContainer/HBoxContainer/Refresh/HBoxContainer/Price
 
 @onready var continue_button: Button = $TroopSelect/VBoxContainer/HBoxContainer/ContinueButton
+@onready var next_wave_button: Button = $NextWaveButton
 
 @onready var wave_cleared_label: Label = $WaveClearedLabel
 @onready var wave_cleared_continue: Button = $WaveClearedLabel/WaveClearedContinue
@@ -50,11 +52,12 @@ func close_troop_selector () -> void:
 	var enter_placing_mode: bool = PlayerStatus.stored_troops.size() != 0
 	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.PLACE if enter_placing_mode else PlayerStatus.CLICK_MODE.SHOOT
 	troop_select.hide()
-	
-	if !enter_placing_mode:
-		SignalBus.emit_setup_wave()
+	next_wave_button.show()
+	#if !enter_placing_mode:
+		#SignalBus.emit_setup_wave()
 
 func on_wave_change () -> void:
+	next_wave_button.hide()
 	wave_count.show()
 	wave_count.text = "Wave: " + str(PlayerStatus.current_wave)
 
@@ -81,10 +84,18 @@ func on_game_won () -> void:
 	win_label.show()
 	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.NONE
 
+func on_troops_changed () -> void:
+	troop_counter.text = "Troops: " + str(PlayerStatus.active_troops) + "/" + str(PlayerStatus.max_troops_active)
+
+func on_next_wave_button_pressed() -> void:
+	PlayerStatus.current_click_mode = PlayerStatus.CLICK_MODE.SHOOT
+	SignalBus.emit_setup_wave()
+
 func _ready() -> void:
 	health_bar.body = player
 	on_ammo_changed()
 	on_blocks_changed()
+	on_troops_changed()
 	
 	if PlayerStatus.blocks > 0:
 		open_troop_selector()
@@ -93,8 +104,11 @@ func _ready() -> void:
 	
 	refresh.pressed.connect(on_refreshed)
 	continue_button.pressed.connect(close_troop_selector)
-	SignalBus.blocks_changed.connect(on_blocks_changed)
 	gun_component.ammo_changed.connect(on_ammo_changed)
+	next_wave_button.pressed.connect(on_next_wave_button_pressed)
+	
+	SignalBus.blocks_changed.connect(on_blocks_changed)
 	SignalBus.game_won.connect(on_game_won)
 	SignalBus.begin_wave.connect(on_wave_change)
 	SignalBus.wave_ended.connect(on_wave_cleared)
+	SignalBus.troops_changed.connect(on_troops_changed)

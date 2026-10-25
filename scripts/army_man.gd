@@ -19,6 +19,8 @@ func get_nearest_node_in_group(group):
 	return nodes.front() if nodes.size() > 0 else null
 
 func _ready() -> void:
+	PlayerStatus.active_troops += 1
+	SignalBus.emit_troops_changed()
 	health_component.damaged.connect(on_damaged)
 	health_component.died.connect(on_died)
 
@@ -55,9 +57,11 @@ func on_damaged(_damage_taken: float) -> void:
 func damage_flash() -> void:
 	var red_flash: Tween = create_tween()
 	var white_flash: Tween = create_tween()
-	
 	white_flash.tween_property(self,"modulate:v",1,0.1).from(15)
 	red_flash.tween_property(self, "modulate:s", 0, 0.1).from(15)
 
 func on_died () -> void:
+	PlayerStatus.active_troops -= 1
+	SignalBus.emit_troops_changed()
+	#play sound
 	queue_free()

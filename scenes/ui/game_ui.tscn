@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://drxiayebo8v1s" path="res://scripts/ui/game_ui.gd" id="1_u001w"]
 [ext_resource type="FontFile" uid="uid://bh7q5xrw6mw0i" path="res://assets/fonts/YOSIA-SCRIBBLE-TIGHT.ttf" id="2_bma8u"]
-[ext_resource type="Texture2D" uid="uid://ckuge1jmo5w1l" path="res://assets/button cardboard.png" id="2_crnce"]
+[ext_resource type="Texture2D" uid="uid://ckuge1jmo5w1l" path="res://assets/ui/button cardboard.png" id="2_crnce"]
 [ext_resource type="PackedScene" uid="uid://cxycyknysydd1" path="res://scenes/ui/health_bar.tscn" id="2_u001w"]
 [ext_resource type="PackedScene" uid="uid://bdmyssrhu4j55" path="res://scenes/ui/troop_button.tscn" id="4_fct72"]
 [ext_resource type="Texture2D" uid="uid://c3yc434c1kxo8" path="res://assets/ui/blocks.png" id="4_qrkc0"]
@@ -42,6 +42,10 @@ font_size = 60
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_crnce"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
+font = ExtResource("2_bma8u")
+font_size = 25
+
 [node name="Game UI" type="Control" unique_id=1426189323]
 layout_mode = 3
 anchors_preset = 15
@@ -57,6 +61,11 @@ scale = Vector2(1.4766667, 1)
 texture = ExtResource("2_crnce")
 
 [node name="ButtonCardboard2" type="Sprite2D" parent="." unique_id=884438680]
+position = Vector2(1025, 141)
+scale = Vector2(1.8533334, 1)
+texture = ExtResource("2_crnce")
+
+[node name="ButtonCardboard4" type="Sprite2D" parent="." unique_id=1828805552]
 position = Vector2(1025, 79)
 scale = Vector2(1.4933333, 1)
 texture = ExtResource("2_crnce")
@@ -81,10 +90,16 @@ theme_override_constants/margin_bottom = 40
 [node name="Right" type="VBoxContainer" parent="Vitals" unique_id=836613608]
 layout_mode = 2
 size_flags_horizontal = 8
+theme_override_constants/separation = 36
 
 [node name="AmmoCounter" type="Label" parent="Vitals/Right" unique_id=687502012]
 layout_mode = 2
 text = "Ammo: 10/10"
+label_settings = SubResource("LabelSettings_u001w")
+
+[node name="TroopCounter" type="Label" parent="Vitals/Right" unique_id=2022608867]
+layout_mode = 2
+text = "Troops: 10/10"
 label_settings = SubResource("LabelSettings_u001w")
 
 [node name="Left" type="VBoxContainer" parent="Vitals" unique_id=1740020079]
@@ -140,9 +155,9 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 300
+theme_override_constants/margin_left = 275
 theme_override_constants/margin_top = 175
-theme_override_constants/margin_right = 300
+theme_override_constants/margin_right = 275
 theme_override_constants/margin_bottom = 200
 
 [node name="NinePatchRect" type="NinePatchRect" parent="TroopSelect" unique_id=1495202154]
@@ -311,3 +326,36 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_bxde6")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_opxtl")
 theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
 text = "(Click Here to Continue)"
+
+[node name="NextWaveButton" type="Button" parent="." unique_id=1546073703]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -173.0
+offset_top = 98.0
+offset_right = 174.0
+offset_bottom = 136.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_bma8u")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxEmpty_bxde6")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_opxtl")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_crnce")
+text = "Click Here to Begin Next Wave"
+
+[node name="Label" type="Label" parent="NextWaveButton" unique_id=1233350551]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -173.5
+offset_top = -8.0
+offset_right = 175.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "(Unplaced troops remain in storage)"
+label_settings = SubResource("LabelSettings_xrivr")

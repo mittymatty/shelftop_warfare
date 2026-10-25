@@ -5,14 +5,15 @@ var current_click_mode: CLICK_MODE = CLICK_MODE.PLACE
 var current_game_status: GAME_STATUS = GAME_STATUS.PEACE
 
 var blocks: int = 4 # Starting value
+var max_troops_active: int = 5
 var stored_troops: Array[PackedScene] = []
-
-var current_wave: int = 0
 
 var base_refresh_cost: int = 2
 var current_refresh_cost: int = 2
 var has_used_free_refresh: int = false
 
+var current_wave: int = 0
+var active_troops: int = 0
 var active_enemies: int = 0
 
 

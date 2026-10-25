@@ -10,7 +10,12 @@ radius = 14.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_hy6xw"]
 font = ExtResource("4_ihoqm")
-font_size = 100
+font_size = 80
+outline_size = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_ihoqm"]
+font = ExtResource("4_ihoqm")
+font_size = 80
 outline_size = 1
 
 [node name="PlacementCursor" type="Marker2D" unique_id=1614709603]
@@ -69,4 +74,24 @@ size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 90
 text = "Click to place"
 label_settings = SubResource("LabelSettings_hy6xw")
+horizontal_alignment = 1
+
+[node name="RemainingTroopsLabel" type="Label" parent="." unique_id=1257089807]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -319.00003
+offset_top = -95.0
+offset_right = 320.99997
+offset_bottom = 5.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.2, 0.2)
+pivot_offset_ratio = Vector2(0.5, 0.5)
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 90
+text = "Remaining: 1"
+label_settings = SubResource("LabelSettings_ihoqm")
 horizontal_alignment = 1
