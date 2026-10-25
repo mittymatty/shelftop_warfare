@@ -26,13 +26,76 @@
 [ext_resource type="AudioStream" uid="uid://xk64vg056hwn" path="res://audio/soldier_lines/Audio 3.ogg" id="24_qxf46"]
 [ext_resource type="AudioStream" uid="uid://dh8swjfb0wmkp" path="res://audio/soldier_lines/Audio 4.ogg" id="25_6a1dg"]
 [ext_resource type="AudioStream" uid="uid://dfubbfxsm3m73" path="res://audio/soldier_lines/Audio 5.ogg" id="26_nps6i"]
+[ext_resource type="AudioStream" uid="uid://dgmtwewp1rva1" path="res://audio/soldier_deaths/Audio 1.ogg" id="27_y30hs"]
+[ext_resource type="AudioStream" uid="uid://br7p8k5dkc2cr" path="res://audio/soldier_deaths/Audio 2.ogg" id="28_qxf46"]
+[ext_resource type="AudioStream" uid="uid://b5aehpdt3g6t7" path="res://audio/soldier_deaths/Audio 3.ogg" id="29_6a1dg"]
+[ext_resource type="AudioStream" uid="uid://k2xlcoo31i1d" path="res://audio/soldier_deaths/Audio 4.ogg" id="30_nps6i"]
+[ext_resource type="AudioStream" uid="uid://c5yqky03wgew7" path="res://audio/soldier_deaths/Audio 5.ogg" id="31_2umai"]
+[ext_resource type="AudioStream" uid="uid://d2cc13yclihi1" path="res://audio/soldier_deaths/Audio 6.ogg" id="32_xlbpk"]
+[ext_resource type="AudioStream" uid="uid://cdhu5ykai0waa" path="res://audio/soldier_deaths/Audio 7.ogg" id="33_a5hke"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vr6e3"]
 radius = 5.0
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hy6xw"]
-particle_flag_disable_z = true
-spread = 90.0
+[sub_resource type="Animation" id="Animation_y30hs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_qxf46"]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Visuals:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2166667, 0.93333334),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -20), Vector2(0, 300)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Visuals:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06666671, 0.36666667, 1),
+"transitions": PackedFloat32Array(0.5, 0.5, 0.5, 0.5),
+"update": 0,
+"values": [0.0, 0.7853982, 2.5307274, 6.283185307179586]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6a1dg"]
+_data = {
+&"RESET": SubResource("Animation_y30hs"),
+&"die": SubResource("Animation_qxf46")
+}
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_xrivr"]
 streams_count = 11
@@ -48,7 +111,17 @@ stream_8/stream = ExtResource("25_6a1dg")
 stream_9/stream = ExtResource("26_nps6i")
 stream_10/stream = ExtResource("18_pv51q")
 
-[node name="ArmyMan" type="CharacterBody2D" unique_id=365000319 node_paths=PackedStringArray("movement_component", "gravity_component", "tracker_component", "animation_component", "gun_component", "health_component", "drop_chute_raycast", "parachute")]
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_cailu"]
+streams_count = 7
+stream_0/stream = ExtResource("27_y30hs")
+stream_1/stream = ExtResource("28_qxf46")
+stream_2/stream = ExtResource("29_6a1dg")
+stream_3/stream = ExtResource("30_nps6i")
+stream_4/stream = ExtResource("31_2umai")
+stream_5/stream = ExtResource("32_xlbpk")
+stream_6/stream = ExtResource("33_a5hke")
+
+[node name="ArmyMan" type="CharacterBody2D" unique_id=365000319 node_paths=PackedStringArray("movement_component", "gravity_component", "tracker_component", "animation_component", "gun_component", "health_component", "drop_chute_raycast", "parachute", "death_sound")]
 collision_layer = 2
 collision_mask = 33
 script = ExtResource("1_txgrc")
@@ -60,6 +133,7 @@ gun_component = NodePath("Components/GunComponent")
 health_component = NodePath("Components/HealthComponent")
 drop_chute_raycast = NodePath("DropChuteRaycast")
 parachute = NodePath("Visuals/Parachute")
+death_sound = NodePath("Death")
 
 [node name="HealthRegenDelay" type="Timer" parent="." unique_id=1501705794]
 wait_time = 8.0
@@ -128,10 +202,8 @@ shape = SubResource("CapsuleShape2D_vr6e3")
 target_position = Vector2(0, 52)
 collision_mask = 33
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="." unique_id=2109886639]
-visible = false
-position = Vector2(0, -21)
-process_material = SubResource("ParticleProcessMaterial_hy6xw")
+[node name="DeathAnim" type="AnimationPlayer" parent="." unique_id=1388976814]
+libraries/ = SubResource("AnimationLibrary_6a1dg")
 
 [node name="ReloadBar" parent="." unique_id=1286998321 node_paths=PackedStringArray("gun_component") instance=ExtResource("11_rjri2")]
 offset_top = -21.0
@@ -156,6 +228,11 @@ max_distance = 500.0
 [node name="Voice" type="AudioStreamPlayer2D" parent="." unique_id=1063269541]
 stream = SubResource("AudioStreamRandomizer_xrivr")
 autoplay = true
+max_distance = 600.0
+
+[node name="Death" type="AudioStreamPlayer2D" parent="." unique_id=670531871]
+stream = SubResource("AudioStreamRandomizer_cailu")
+volume_db = -5.0
 max_distance = 600.0
 
 [editable path="Components/GunComponent"]

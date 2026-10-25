@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://cdhu5ykai0waa"
+path="res://.godot/imported/Audio 7.ogg-221dbb68aa8d7aa956da003842f8efa9.oggvorbisstr"
+
+[deps]
+
+source_file="res://audio/soldier_deaths/Audio 7.ogg"
+dest_files=["res://.godot/imported/Audio 7.ogg-221dbb68aa8d7aa956da003842f8efa9.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

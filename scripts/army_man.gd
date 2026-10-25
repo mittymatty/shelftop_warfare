@@ -10,6 +10,9 @@ class_name ArmyMan extends CharacterBody2D
 @export var drop_chute_raycast: RayCast2D
 @export var parachute: Sprite2D
 
+@export var death_sound: AudioStreamPlayer2D
+@onready var death_anim: AnimationPlayer = $DeathAnim
+
 var is_parachute_attached: bool = true
 var last_target_pos: Vector2 = Vector2.ZERO
 
@@ -69,5 +72,7 @@ func damage_flash() -> void:
 func on_died () -> void:
 	PlayerStatus.active_troops -= 1
 	SignalBus.emit_troops_changed()
-	#play sound
+	death_sound.play()
+	death_anim.play("die")
+	await death_anim.animation_finished
 	queue_free()
