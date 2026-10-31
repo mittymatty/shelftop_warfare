@@ -32,10 +32,15 @@ func switch_to_scene (scene_to_switch_to: PackedScene) -> void:
 	PlayerStatus.current_wave = 0
 	PlayerStatus.blocks = PlayerStatus.starter_blocks if !scene_to_switch_to == BEDROOM_MONKE else 40
 	PlayerStatus.current_increase_max_troops_cost = PlayerStatus.starter_increase_max_troops_cost
+	PlayerStatus.active_troops = 0
+	PlayerStatus.max_troops_active = 5
 	
 	get_tree().change_scene_to_packed(scene_to_switch_to)
 
 func _ready() -> void:
+	for enemy: Enemy in get_tree().get_nodes_in_group("enemies"):
+		enemy.on_died()
+	
 	quit_button.pressed.connect(on_quit_button_pressed)
 	start_button.pressed.connect(on_start_button_pressed)
 	go_back.pressed.connect(on_go_back_pressed)

@@ -16,6 +16,7 @@ func _ready() -> void:
 	
 	health_component.health_changed.connect(update_bar)
 	health_component.died.connect(on_died)
+	SignalBus.game_over.connect(on_game_over)
 
 func update_bar() -> void:
 	max_value = health_component.max_health
@@ -27,6 +28,9 @@ func update_visibility() -> void:
 		show()
 		return
 	
+	hide()
+
+func on_game_over() -> void:
 	hide()
 
 func on_died() -> void:

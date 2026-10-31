@@ -9,7 +9,6 @@ var blocks: int = 4 # Starting value
 var max_troops_active: int = 5
 var stored_troops: Array[PackedScene] = []
 
-
 var starter_increase_max_troops_cost: int = 5
 var current_increase_max_troops_cost: int = 5
 var increase_max_troops_cost_cost_increase: int = 2
